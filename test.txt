@@ -1,0 +1,16 @@
+
+Cyberchef
+ghidra
+
+apt upgrade
+apt full-upgrade
+
+クライアント（ユーザー：karuma）からVPS（IPアドレス：aaa.bbb.ccc.ddd）にファイル（tmp1.txt）を転送（put）
+$ sftp karuma@aaa.bbb.ccc.ddd
+sftp> put tmp1.txt
+sftp> quit
+
+VPS（sftpserver）からクライアント（ユーザー：karuma）にファイル（tmp2.txt）を取得（get）
+$ sftp karuma@sftpserver
+sftp> get tmp2.txt
+sftp> quit 
